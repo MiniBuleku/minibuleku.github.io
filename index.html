@@ -2,6 +2,12 @@
 <html lang="en">
 
 <head>
+    <style>
+        .loading {
+            display: block;
+            margin-left: 37%
+        }
+    </style>
     <meta charset="utf-8">
     <!-- <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"> -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +20,7 @@
 </head>
 
 <body>
-    <img style="display: block;margin-left: auto; margin-right: auto" src="data/Image/title.png"></img><br>
+    <img style="display: block; margin-left: auto; margin-right: auto" src="data/Image/title.png"></img><br>
     <div style="padding-left: 20px; padding-right: 20px"class="container-fluid">
         <main class="row">
             <div class="col">
@@ -39,6 +45,11 @@
     <script src="js/csv_to_html_table.js"></script>
 
     <script>
+        $('<img src="data/Image/load.gif" class="loading" style="position: fixed"></img><br><br>').appendTo('body');
+ 
+    </script>
+    <script>
+
         function media(entry) {
             var audio = new Audio("data/Audio/" + entry + ".wav")
             audio.play()
@@ -94,19 +105,17 @@
             ]
         });
     </script>
-    <div style="text-align: center">
-        <div style="display:inline-block; padding:1em; margin:1em">
+        <div style="padding-left: 40px">
             <h5 style="font-size: 27px">Jacob Kodner (柯雅各)</h5>
             <h5>Undergraduate | Department of Language Science</h5>
             <h5>University of California, Irvine</h5><br>
         </div>
-        <div style="display:inline-block;padding:1em; margin:1em">
+        <div style="padding-left: 40px">
             <h5 style="font-size: 27px">Meng Rong Lu (孟榮路)</h5>
             <h5>Sebsihiyan Amban | Manchu-Sibe Culture Center</h5>
             <h5>Shenyang, China</h5><br>
         </div>
-        <h5 style="left: 50%; right: 50%; bottom: 2px">Contact: jkodner@uci.edu</h5>
-    </div>
+        <h5 style="padding-left:40px">Contact: jkodner@uci.edu</h5><br>
 </body>
 
 </html>
