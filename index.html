@@ -5,9 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CSV to HTML Table</title>
-    <meta name="author" content="Derek Eder">
-    <meta content="Display any CSV file as a searchable, filterable, pretty HTML table">
+    <title>Mini Buleku</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
@@ -16,10 +14,10 @@
 </head>
 
 <body>
+    <img display="block" margin-left="auto" margin-right="auto" src="data/Image/title.png"></img>
     <div class="container-fluid">
         <main class="row">
             <div class="col">
-                <h1>Mini Buleku</h1>
                 <div id="table-container"></div>
             </div>
         </main>
@@ -40,15 +38,34 @@
     <script src="js/csv_to_html_table.js"></script>
 
     <script>
+        function media(entry) {
+            var button = document.getElementById(entry)
+            var x = document.createElement("AUDIO")
+            x.setAttribute("src", "data/Audio/" + entry + ".wav")
+            x.play()
+
+        }
+        function size(text) {
+            return "<h3>" + text + "</h3>"
+        }
+        function img(entry) {
+            var button = document.getElementById(entry)
+            button.setAttribute("src", "data/Image/" + entry + ".png")
+        }
+        
         function format_audio(num) {
             if (num.slice(-1) != "*")
-                return "<audio controls><source src='data/Audio/" + num + ".wav' type='audio/mpeg'></audio>"
+                return "<input type='button' onclick='media(" + num + ")' id='" + num + "'value='" + num + "'>"
+                // return "<audio controls><source src='data/Audio/" + num + ".wav' type='audio/mpeg'></audio>"
             else return num;
         }
 
         function format_image(num) {
             if (num) {
-                return "<img src='data/Image/" + num + ".png'>" 
+                if (num.slice(-1) == "*") {
+                    num = num.slice(0, -1)
+                }
+                return "<input type='image' margin-left='auto' margin-right='auto' src='data/Image/0.png' onmouseover='this.src=\"data/Image/" + num + ".png\"' onmouseleave='this.src=\"data/Image/0.png\"'>"
             }
         }
         
@@ -66,6 +83,7 @@
             },
             custom_formatting: [
                 [0, format_audio],
+                [4, size],
                 [5, format_image]
             ]
         });
