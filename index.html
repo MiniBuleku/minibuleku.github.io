@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Mini Buleku</title>
@@ -15,7 +16,7 @@
 
 <body>
     <img style="display: block;margin-left: auto; margin-right: auto" src="data/Image/title.png"></img><br>
-    <div class="container-fluid" onload="test()">
+    <div class="container-fluid">
         <main class="row">
             <div class="col">
                 <div id="table-container"></div>
@@ -78,7 +79,10 @@
             datatables_options: {
                 paging: false,
                 scrollY: "600px",
+                deferRender: true,
+                processing: true,
             },
+            
             custom_formatting: [
                 [0, format_audio],
                 [4, size],
