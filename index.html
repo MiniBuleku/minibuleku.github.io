@@ -4,10 +4,12 @@
 <head>
     <style>
         .loading {
-            display: block;
-            margin-left: 700px;
+            display: inline;
+            padding-left: 700px;
+            padding-top: 100px;
             size: 20%;
-            -webkit-backface-visibility: hidden;
+            z-index: -1;
+            margin: 0
         }
     </style>
     <meta charset="utf-8">
@@ -66,7 +68,7 @@
         
         function format_audio(num) {
             if (num.slice(-1) != "*")
-                return "<input type='image' src='data/Image/ear.png' onclick='media(" + num + ")' id='" + num + "'value='" + num + "'>"
+                return "<input type='image' src='data/Image/play.png' onclick='media(" + num + ")' id='" + num + "'value='" + num + "'>"
                 // return "<audio controls><source src='data/Audio/" + num + ".wav' type='audio/mpeg'></audio>"
             else return num;
         }
