@@ -56,8 +56,15 @@
     <script>
 
         function media(entry) {
-            var audio = new Audio("data/Audio/" + entry + ".wav")
-            audio.play()
+            document.getElementById(entry).style.borderRadius = "50%"
+            document.getElementById(entry).style.border = "2px solid blue"
+            new Audio("data/Audio/" + entry + ".wav").play()
+            setTimeout(unlight, 2500)
+            function unlight() {
+                document.getElementById(entry).style.borderRadius = "0"
+                document.getElementById(entry).style.border = "0px"
+            }
+            
         }
         function size(text) {
             return "<h5>" + text + "</h5>"
@@ -79,7 +86,7 @@
                 if (num.slice(-1) == "*") {
                     num = num.slice(0, -1)
                 }
-                return "<input type='image' margin-left='auto' margin-right='auto' src='data/Image/0.png' onmouseover='this.src=\"data/Image/" + num + ".png\"' onmouseleave='this.src=\"data/Image/0.png\"'>"
+                return "<input type='image' margin-left='auto' margin-right='auto' src='data/Image/0.png' onmouseover='this.src=\"data/Image/" + num + ".png\"' id = " + num + " onmouseleave='this.src=\"data/Image/0.png\"'>"
             }
         }
         
@@ -97,7 +104,8 @@
                 scrollY: "550px",
                 deferRender: true,
                 processing: true,
-                pageLength: 25,
+                lengthChange: false,
+                pageLength: 100,
                 language: {
                     "search": "Search/搜索:",
                 }
