@@ -78,7 +78,7 @@
             if (num.slice(-1) != "*")
                 return "<input type='image' src='data/Image/play.png' onclick='media(" + num + ")' id='" + num + "'value='" + num + "'>"
                 // return "<audio controls><source src='data/Audio/" + num + ".wav' type='audio/mpeg'></audio>"
-            else return null;
+            else return "<div style='display: none'>" + num + "</div>";
         }
 
         function format_image(num) {
@@ -106,6 +106,8 @@
                 processing: true,
                 lengthChange: false,
                 pageLength: 100,
+                columnDefs: [{ orderable: false, targets: 0 }, { orderable: false, targets: 4}, { orderable: false, targets: 5}],
+                order: [[1, 'asc']],
                 language: {
                     "search": "Search/搜索:",
                 }
