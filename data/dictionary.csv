@@ -679,7 +679,7 @@ Audio,Spoken,IPA,Written,Script (Text),Script (Image),Mandarin,English
 678,eNelm,ɯŋɯɹm,enggelembi,ᡝᠩᡤᡝᠯᡝᠮᠪᡳ,678,"超越, 凸出, 涨, 前倾, 俯瞰","to surpass, to exceed; to stick out; to increase; to lean forward; to overlook "
 679,EneN,ənɯŋ,enenggi,ᡝᠨᡝᠩᡤᡳ,679,今天,today
 680,eNeXem,ɯŋɯʂɯm,enggexembi,ᡝᠩᡤᡝᡧᡝᠮᠪᡳ,680,超越 (不间断重复动作),to surpass repeatedly
-681,eni,ɯni,eniye,ᡝᠨᡳᠶᡝ,681,母亲,mother
+681,eni,ɯni,eniye,ᡝᠨᡳᠶᡝ,681,母亲,母亲
 682,eny,ɯnʲ,eniye,ᡝᠨᡳᠶᡝ,682,母亲,mother
 683,er,ɯr,ere,ᡝᡵᡝ,683,这个,this; this one
 684,er medan,ɯr mɯdan,ere mudan,ᡝᡵᡝ ᠮᡠᡩᠠᠨ,684,这次,this time
@@ -1113,7 +1113,7 @@ Audio,Spoken,IPA,Written,Script (Text),Script (Image),Mandarin,English
 1112,haerqen,χærqɯn,hairakan,ᡥᠠᡳᡵᠠᡴᠠᠨ,1112,怜惜的,pitiful
 1113,haevirRun,χævirʁun,hafirhvn,ᡥᠠᡶᡳᡵᡥᡡᠨ,1113,拥挤,"crowded, cramped"
 1114,hafsem,χafsɯm,habxambi,ᡥᠠᠪᡧᠠᠮᠪᡳ,1114,告状,"to complain, to bring a lawsuit"
-1115,hafsen,χafsɯn,habxan,ᡥᠠᠪᡧᠠᠨ,1115,状,"complaint, lawsuit"
+1115*,hafsen,χafsɯn,habxan,ᡥᠠᠪᡧᠠᠨ,1115,状,"complaint, lawsuit"
 1116,hafunem,χafunɯm,hafunambi,ᡥᠠᡶᡠᠨᠠᠮᠪᡳ,1116,通透,to be transparent
 1117,hafw,χafʷ,hafu,ᡥᠠᡶᡠ,1117,通透,penetrating; thorough
 1118,hah,χaχ,haha,ᡥᠠᡥᠠ,1118,男人,"man, male"
@@ -1151,7 +1151,7 @@ Audio,Spoken,IPA,Written,Script (Text),Script (Image),Mandarin,English
 1150,haqsan,χaqsan,haksan,ᡥᠠᡴᠰᠠᠨ,1150,险峻,"steep, arduous"
 1151,haqsem,χaqsɯm,haksambi,ᡥᠠᡴᠰᠠᠮᠪᡳ,1151,咳吐,"to cough up, to spit out"
 1152,haqsen faen,χaqsɯn fæn,haksan fiyan,ᡥᠠᡴᠰᠠᠨ ᡶᡳᠶᠠᠨ,1152,褐色,brown
-1153,haRejy,χaʁɯɖʐʲ,oori,ᠣᠣᡵᡳ,1153,男孩,"boy, son"
+1153,haRejy,χaʁɯɖʐʲ,hahajui,ᡥᠠᡥᠠᠵᡠᡳ,1153,男孩,"boy, son"
 1154,haReN ,χaʁɯŋ,hahangge,ᡥᠠᡥᠠᠩᡤᡝ,1154,雄性,male
 1155,haRerdem,χaʁɯrdɯm,hahardambi,ᡥᠠᡥᠠᡵᡩᠠᠮᠪᡳ,1155,成人,"to grow up, to become a man"
 1156,harRaXem,χarʁaʂɯm,hargaxambi,ᡥᠠᡵᡤᠠᡧᠠᠮᠪᡳ,1156,远眺,to gaze upward
