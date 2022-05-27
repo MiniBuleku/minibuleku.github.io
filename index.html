@@ -76,8 +76,7 @@
         
         function format_audio(num) {
             if (num.slice(-1) != "*")
-                // return "<input type='image' src='data/Image/play.png' onclick='media(" + num + ")' id='" + num + "'value='" + num + "'>"
-                return "<audio controls><source src='data/Audio/" + num + ".wav' type='audio/mpeg'></audio>"
+                return "<input type='image' src='data/Image/play.png' onclick='media(" + num + ")' id='" + num + "'value='" + num + "'>"
             else return "<div style='display: none'>" + num + "</div>";
         }
 
