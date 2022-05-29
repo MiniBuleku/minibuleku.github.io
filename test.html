@@ -2,34 +2,51 @@
 <html lang="en">
 
 <head>
-    <style>
-        .loading {
-            display: inline;
-            padding-left: 700px;
-            padding-top: 175px;
-            size: 20%;
-            z-index: -1;
-            margin: 0
-        }
-    </style>
+
+<style>
+    
+body { 
+  font: 15px/1.3em 'Verdana';
+}
+
+th {
+    font-size: 17px
+}
+
+#table_id_filter {
+    font-size: 17px;
+    margin-bottom: 20px
+}
+
+input[type=search] {
+    height: 25px;
+}
+
+
+
+h2, h3 {
+    font-weight: lighter;
+}
+
+</style>
     <meta charset="utf-8">
     <!-- <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"> -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Mini Buleku</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+
 </head>
 
 <body>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery.csv.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    <script src="js/csv_to_html_table.js"></script>
+    <img style="display: block; margin-left: auto; margin-right: auto" src="data/Image/title.png"></img><br>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script> -->
+    <!-- <script src="js/jquery.csv.min.js"></script> -->
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <!-- <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script> -->
+    <!-- <script src="js/csv_to_html_table.js"></script> -->
 
     <!-- <script>
         $('<img src="data/Image/load.gif" class="loading" style="position: fixed"></img><br><br>').appendTo('body');
@@ -23973,28 +23990,39 @@
     }
 ],
                 columns: [
-                    {data: "entry"},
+                    {data: "entry", orderable: false},
                     {data: "spoken"},
                     {data: "ipa"},
                     {data: "written"},
-                    {data: "scriptText"},
-                    {data: "mandarin"},
-                    {data: "english"},
+                    {data: "scriptText", orderable: false},
+                    {data: "null", orderable: false, "render": function (data, type, row, meta) {
+                        if (row.written != "") {
+                        return "<input type='image' margin-left='auto' margin-right='auto' src='data/Image/0.png' onmouseover='this.src=\"data/Image/" + row.entry + ".png\"' id = " + row.entry + " onmouseleave='this.src=\"data/Image/0.png\"'>"
+                    } else{
+                        return ""
+                    }}},
+                    {data: "mandarin", orderable: false},
+                    {data: "english", orderable: false},
                 ],
 
                 "columnDefs": [ {
                     "targets": 0,
                     "data": "entry",
                     "render": function (data, type, row, meta) {
-                        return "<input type='image' src='data/Image/play.png' onclick='media(" + data + ")' id='" + data + "'value='" + data + "'>"
-                    }}
+                        return ("<input type='image' src='data/Image/play.png' onclick='media(" + data + ")' id='" + data + "'value='" + data + "'>")
+                    }}   
                 ],
+
+                // "columnDefs": [{ orderable: false, targets: 0 }, { orderable: false, targets: 4}, { orderable: false, targets: 5}, { orderable: false, targets: 6}, { orderable: false, targets: 7}],
 
                 "order": [[1, "asc"]],
                 "paging": true,
                 "scrollY": "550px",
                 "lengthChange": false,
                 "pageLength": 100,
+                "language": {
+                    "search": "Search/搜索:"
+                }
 
             }
             );
@@ -24013,7 +24041,7 @@
 
     </script>
 
-
+<div style="padding-left: 40px; padding-right: 40px">
     <table id="table_id" class="display">
         <thead>
             <tr>
@@ -24022,11 +24050,32 @@
                 <th>IPA</th>
                 <th>Written</th>
                 <th>Script (Text)</th>
+                <th>Script (Image)</th>
                 <th>Mandarin</th>
                 <th>English</th>
             </tr>
         </thead>
     </table>
+</div>
+<br>
+<div style="padding-left: 40px">
+    <h2>Jacob Aaron Kodner (柯雅各) | Developer</h2>
+    <h3>Undergraduate | Department of Language Science</h3>
+    <h3>University of California, Irvine</h3><br>
+</div>
+<div style="padding-left: 40px">
+<h2>Meng Rong Lu (孟榮路) | Linguistic Correspondent</h2>
+<h3>Sebsihiyan Amban, Manchu-Sibe Culture Center</h3>
+<h3>Shenyang, China</h3><br>
+</div>
+<div style="padding-left: 40px">
+<h2 style> So Wai Lun, Tony (蘇偉倫) | Editor</h2>
+<h3>Hong Kong, China</h3>
+</div>
+<br>
+<h4 style="padding-left:40px; font-size: 18px; font-weight: 200">Contact: minibuleku@gmail.com</h3><br>
+
+
 </body>
 
 </html>
