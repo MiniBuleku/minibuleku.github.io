@@ -24023,6 +24023,13 @@ h3 {
                     }}   
                 ],
 
+                "columnDefs": [ {
+                    "targets": 4,
+                    "data": "scriptText",
+                    "render": function (data, type, row, meta) {
+                        return ("<p style='font-size:25px; writing-mode: vertical-rl; text-orientation: sideways'>" + data + "</p>")
+                    }}   
+                ],
                 // "columnDefs": [{ orderable: false, targets: 0 }, { orderable: false, targets: 4}, { orderable: false, targets: 5}, { orderable: false, targets: 6}, { orderable: false, targets: 7}],
 
                 "order": [[1, "asc"]],
