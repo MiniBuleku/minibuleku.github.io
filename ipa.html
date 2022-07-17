@@ -1,0 +1,454 @@
+<head>
+    <style>
+
+        body { 
+        font: 15px/1.3em 'Verdana';
+        }
+
+        td {
+            font-size: 17px;
+        }
+
+        #table_id_filter {
+            font-size: 17px;
+            margin-bottom: 20px
+        }
+
+        input[type=search] {
+            height: 25px;
+        }
+
+        .bio {
+            margin-left:auto;
+            margin-right:auto;
+            padding-left: 5%;
+            padding-right: 5%
+        }
+        ​
+
+        img.center {
+                margin-top: 50px;
+                display:block;
+                margin-left:auto;
+                margin-right:auto
+            }
+
+        div.f {
+                margin-top: 35px;
+                margin-left:auto;
+                margin-right:auto;
+                text-align:center;
+            }
+
+        div.j {
+            display: inline-block;
+            margin-left: 0px;
+            text-align: left;
+        }
+
+        div.x {
+            display: inline-block;
+            margin-left: 110px;
+            text-align: left;
+        }
+
+        button {
+            width: 100px;
+            height: 60px;
+            font-size: 20px;
+            font-weight: bold
+        }
+
+        textarea {
+            border-width: 2px;
+        }
+
+        .column {
+            display: flex;
+            flex: 50%;
+            padding: 5px
+        }
+
+    </style>
+</head>
+<img style="display: block; margin-left: auto; margin-right: auto" src="data/Image/title.png"></img><br>
+<div class = "f">
+    <form>
+        <h2>Sibe Romanization - 口語符號</h2>
+        <textarea id="manchu" rows="12" cols="150" name="manchu"></textarea><br>
+        <h2>International Phonetic Alphabet - 國際音標</h2>
+        <textarea id="ipa" rows="12" cols="150" name="ipa"></textarea><br><br><br>
+        <button type="button" id="sub">Convert 轉換</button><br><br>
+    </form>
+</div>
+    <br>
+
+    <div class="bio">
+        <h2><u>Romanization & IPA</u></h2>
+        <div class="tw-prose prose-lg max-w-screen-md false svelte-sxn7ro"><!-- HTML_TAG_START --><p>Note: The romanization system is an ASCII-based system developed by the primary linguistic correspondent, and IPA transcriptions are based on the pronunciations of the linguistic correspondent. These both are therefore provisional, specific to this dictionary, and subject to change.&nbsp;</p>
+    <div style="display:flex">
+        <table class="column"><tbody><tr><td><strong>ROMANIZATION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strong></td><td><strong>IPA&nbsp;</strong></td></tr><tr><td><strong>Vowels</strong></td><td>&nbsp;</td></tr><tr><td>a</td><td>/a/</td></tr><tr><td>ae</td><td>/æ/</td></tr><tr><td>ai</td><td>/aj/</td></tr><tr><td>aw</td><td>/aw/</td></tr><tr><td>E</td><td>/ə/</td></tr><tr><td>e</td><td>/ɯ/</td></tr><tr><td>ei</td><td>/ɯj/</td></tr><tr><td>ew</td><td>/əɔ/</td></tr><tr><td>i</td><td>/i/</td></tr><tr><td>o</td><td>/ɔ/</td></tr><tr><td>oe</td><td>/œ/</td></tr><tr><td>oi</td><td>/oj/</td></tr><tr><td>u</td><td>/u/</td></tr><tr><td>ui</td><td>/uj/</td></tr><tr><td>w</td><td>following consonant → /◌ʷ/<br>everywhere else → /w/</td></tr><tr><td>y</td><td>following consonant → /◌ʲ/<br>everywhere else → /j/</td></tr><tr><td>ya</td><td>/ja/&nbsp;</td></tr><tr><td>yaw</td><td>/jaw/</td></tr><tr><td>ye</td><td>/jə/</td></tr><tr><td>yew</td><td>/jəw/</td></tr><tr><td>yo</td><td>/jo/</td></tr><tr><td>yoe</td><td>/jœ/</td></tr><tr><td>yu</td><td>/jy/</td></tr><tr><td>ywa</td><td>/ɥa/</td></tr><tr><td>&nbsp;</td> 
+        <table class="column"><tbody><tr><td><strong>ROMANIZATION &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strong></td><td><strong>IPA&nbsp;</strong></td></tr><tr><td><strong>Consonants</strong></td><td>&nbsp;</td></tr><tr><td>b</td><td>/b/</td></tr><tr><td>c</td><td>preceding /i/ → /tɕ/<br>everywhere else → /ʈʂ/</td></tr><tr><td>d</td><td>/d/</td></tr><tr><td>dz</td><td>/ts/</td></tr><tr><td>f</td><td>/f/</td></tr><tr><td>g</td><td>/g/</td></tr><tr><td>G</td><td>/ɢ/</td></tr><tr><td>h</td><td>/χ/</td></tr><tr><td>j</td><td>preceding /i/ → /dʒ/<br>everywhere else → /ɖʐ/</td></tr><tr><td>k</td><td>/k/</td></tr><tr><td>l</td><td>preceding consonant → /l/<br>everywhere else → /ɹ/</td></tr><tr><td>m</td><td>/m/</td></tr><tr><td>n</td><td>/n/</td></tr><tr><td>N</td><td>/ŋ/</td></tr><tr><td>p</td><td>/p/</td></tr><tr><td>q</td><td>/q/</td></tr><tr><td>R</td><td>/ʁ/</td></tr><tr><td>r</td><td>/r/</td></tr><tr><td>s</td><td>preceding /i/ → /ɕ/<br>everywhere else → /s/</td></tr><tr><td>t</td><td>/t/</td></tr><tr><td>ts&nbsp;</td><td>/tsʰ/</td></tr><tr><td>V</td><td>/ɣ/</td></tr><tr><td>v</td><td>/v/</td></tr><tr><td>x</td><td>/x/</td></tr><tr><td>X</td><td>/ʂ/</td></tr><tr><td>Z</td><td>/ʐ/</td></tr><tr><td>z</td><td>preceding /i/ → /ʑ/<br>everywhere else → /z/</td></tr></tbody></table></figure><!-- HTML_TAG_END --></div>
+    </div> 
+    </div>
+    <br>
+
+
+<script>
+    var vowels = ['a', 'e', 'i', 'o', 'u', 'y', 'w'];
+    var next_1 = ['y'];
+    var next_2 = ['ya', 'ye', 'yo', 'yu'];
+    var next_3 = ['yaw', 'ywa', 'yoe'];
+    var cons = ['p', 'b', 't', 'd', 'k', 'g', 'x', 'ɣ', 'q', "G", "h", "ʁ", "f", "v", "s", "z", "š", "ž", "c", "j", "r", "l", "m", "n", "ŋ", "y", "V", "R", "X", "Z", "N"]
+    var key = {
+    "a": "a",
+    "E": "ə",
+    "e": "ɯ",
+    "i": "i",
+    "o": "ɔ",
+    "u": "u",  
+    "ai": "aj",
+    "aw": "ɑw",
+    "ei": "ɯj",
+    "ew": "əɔ",
+    "ya": "QY",  
+    "ae": "æ",
+    "ye": "QY",
+    "yo": "QY",  
+    "yu": "QY",
+    "oi": "ɔj",  
+    "wa": "ʷɑ",  
+    "oe": "œ",
+    "wo": "ʷɜ",
+    "ui": "uj",
+    "yaw": "QY",
+    "yew": "QY",
+    "ywa": "QY",
+    "yoe": "QY",
+    "w": "ʷ",
+    "y": "QY",
+    "p": "pʰ",
+    "b": "b",
+    "t": "t",
+    "d": "d",
+    "k": "k",
+    "g": "ɡ",
+    "x": "x",
+    "ɣ": "ɣ",
+    "V": "ɣ",
+    "q": "q",
+    "G": "ɢ",
+    "h": "χ",
+    "ʁ": "ʁ",
+    "R": "ʁ",
+    "f": "f",
+    "v": "v",
+    "š": "ʂ",
+    "X": "ʂ",
+    "ž": "ʐ",
+    "Z": "ʐ",
+    "r": "r",
+    "l": "l",  
+    "m": "m",
+    "n": "n",
+    "ŋ": "ŋ",
+    "N": "ŋ",
+    "dz": "ts",  
+    "ts": "tsʰ",  
+    "s": "RULE",
+    "c": "RULE",
+    "j": "RULE",
+    "z": "RULE",
+    }
+    
+    var rules_key = {
+    "s": {
+        "i_rule": "ɕ",
+        "everyw_else": "s"
+    },
+    "c": {
+        "i_rule": "tɕ",
+        "everyw_else": "ʈʂ"
+    },
+    "j": {
+        "i_rule": "dʒ",  
+        "everyw_else": "ɖʐ"
+    },
+    "z": {
+        "i_rule": "ʑ",
+        "everyw_else": "z"
+    }
+    }
+    
+    var qy_key = {
+        
+    "y": {
+        "everyw_else": "j",
+        "cons_rule": "ʲ"
+    },
+
+    "ya": {
+    "everyw_else": "ja",
+    "cons_rule":"ʲa"
+    },
+    
+    "ye": {
+    "everyw_else": "jə",
+    "cons_rule":"ʲə"
+    },
+    
+    "yo": {
+    "everyw_else": "jɔ",
+    "cons_rule":"ʲɔ"
+    },
+    
+    "yu": {
+    "everyw_else": "jy",
+    "cons_rule":"ʲy"
+    },
+    
+    "yaw": {
+    "everyw_else": "jɑw",
+    "cons_rule":"ʲɑw"
+    },
+    
+    "ywa": {
+    "everyw_else": "ɥa",
+    "cons_rule":"ʲʷa"
+    },
+    
+    "yoe": {
+    "everyw_else": "jœ",
+    "cons_rule":"ʲœ"
+    }
+    
+    }
+    
+    function split_word (sentence) {
+    var words = sentence.split ();
+    return words;
+    };
+    
+    function split_letters(word) {
+    var letters_in_word = [];
+    for (var letter of letters_in_word) {
+        letters_in_word.push (letter);
+    }
+    return letters_in_word;
+    };
+    
+    function look(lst, ct, val, comb) {
+    if (typeof comb == 'undefined' || (comb != null && comb.hasOwnProperty ("__kwargtrans__"))) {;
+        var comb = false;
+    };
+    try {
+        if (comb) {
+        var output = [];
+        for (var i = ct; i < val + 1; i++) {
+            output.push ();
+        }
+        return output.join('');
+        }
+        else if (ct == 0 && val == -(1)) {
+        return 'NONE';
+        }
+        else {
+        if (lst[ct + val] != undefined) {
+            return lst[ct + val]
+        }
+        else {
+            return ''
+        }
+        }
+    }
+    catch (__except0__) {
+        if (isinstance (__except0__, IndexError)) {
+        return 'NONE';
+        }
+        else {
+        throw __except0__;
+        }
+    }
+    };
+    document.getElementById("sub").onclick = function() {convert()}
+    function convert() {
+        var user_string = document.getElementById("manchu").value
+        var word_list = user_string.split ();
+        var output = [];
+        for (var word of word_list) {
+        var letters_list = []
+        for (var letter of word) {
+        letters_list.push (letter);
+        };
+            var new_word = [];
+            var count = 0;
+            for (var letter of letters_list) {
+                if (count == (letters_list.length)) {
+                    break;
+                }
+                else {
+                    var letter = letters_list[count];
+                    var last_letter = look(letters_list, count, -(1));
+                    var next_letter = look(letters_list, count, 1);
+                    var nnext_letter = look(letters_list, count, 2);
+                    var next_combo = letter + next_letter;
+                    var nnext_combo = (letter + next_letter) + nnext_letter;
+
+                    if (!(vowels.indexOf(letter) >= 0)) {
+                        if (letter == 'd' && look(letters_list, count, 1) == 'z') {
+                            var ipa_letter = key["dz"];
+                            count += 2;
+                        }
+                        else if (letter == 't' && look(letters_list, count, 1) == 's') {
+                            var ipa_letter = key["ts"];
+                            count += 2;
+                        }
+                        else if ((['s', 'c', 'j', 'z'].indexOf(letter) >= 0)) {
+                            if (look(letters_list, count, 1) == 'i' || ((letter == "c") & (next_letter == "y"))) {
+                                var ipa_letter = rules_key[letter]["i_rule"];
+                                count += 1;
+                            }
+                            else {
+                                var ipa_letter = rules_key[letter]["everyw_else"];
+                                count += 1;
+                            }
+                        }
+                        else if (letter == "l") {
+                            if (Object.values(vowels).indexOf(next_letter) >= 0) {
+                                var ipa_letter = "l";
+                            }
+                            else {
+                                var ipa_letter = "ɹ";
+                            }
+                            count += 1
+                        }
+
+                        // else if (letter == "n") {
+                        //     if (Object.values(vowels).indexOf(next_letter) >= 0) {
+                        //         var ipa_letter = "n";
+                        //     }
+                        //     else {
+                        //         var ipa_letter = "ɴ";
+                        //     }
+                        //     count += 1
+                        // }
+                        else if ((Object.keys(key).indexOf(letter)>= 0)) {
+                            var ipa_letter = key[letter];
+                            count += 1;
+                        }
+                        
+                        else {
+                            var ipa_letter = letter;
+                            count += 1;
+                        }
+                    }
+                    else if ((Object.values(vowels).indexOf(letter)>= 0)) {
+                        if (nnext_combo == "yew") {
+                            if (last_letter == 'NONE' || last_letter == ' ' || (Object.keys(key).indexOf(last_letter) < 0)) {
+                                var ipa_letter = "jəw";
+                            }
+                            else {
+                                var ipa_letter = "ʲəw";
+                            }
+                            count += 3;
+                        }     
+                        else {
+
+                            if (last_letter == "NONE") {
+                            var last_letter = "a"
+                            }
+                            if ((Object.values(vowels).indexOf(next_letter) >= 0)) {
+                                if ((Object.values(vowels).indexOf(nnext_letter)>= 0)) {
+                                    if ((Object.values(next_3).indexOf(nnext_combo)>= 0)) {
+                                        if ((Object.values(cons).indexOf(last_letter) >= 0 || last_letter == 'NONE')) {
+                                            var ipa_letter = qy_key[nnext_combo]["cons_rule"];
+                                        }
+                                        else {
+                                            var ipa_letter = qy_key[nnext_combo]["everyw_else"];
+                                        }
+                                        count += 3;
+                                    }
+                                    else if ((Object.keys(key).indexOf(nnext_combo)>= 0)) {
+                                        var ipa_letter = key[nnext_combo];
+                                        count += 3;
+                                    }
+                                    else if ((Object.values(next_2).indexOf(next_combo)>= 0)) {
+                                        if ((Object.values(cons).indexOf(last_letter)>= 0 || last_letter == 'NONE')) {
+                                            var ipa_letter = qy_key[next_combo]["cons_rule"];
+                                        }
+                                        else {
+                                            var ipa_letter = qy_key[next_combo]["everyw_else"];
+                                        }
+                                        count += 2;
+                                    }
+                                    else if (letter == "y") {
+                                        if ((Object.values(cons).indexOf(last_letter)>= 0)) {
+                                        var ipa_letter = qy_key["y"]["cons_rule"];
+                                        }
+                                        else {
+                                            var ipa_letter = qy_key["y"]["everyw_else"];
+                                        }
+                                        count += 1;
+                                    }
+                                    else if ((Object.keys(key).indexOf(letter)>= 0)) {
+                                        var ipa_letter = key[letter];
+                                        count += 1;
+                                    }
+                                }
+                                else if ((Object.values(next_2).indexOf(next_combo)>= 0)) {
+                                    if ((Object.values(cons).indexOf(last_letter)>= 0)) {
+                                        var ipa_letter = qy_key[next_combo]["cons_rule"];
+                                    }
+                                    else {
+                                        var ipa_letter = qy_key[next_combo]["everyw_else"];
+                                    }
+                                    count += 2;
+                                }
+                                else if ((Object.keys(key).indexOf(next_combo)>= 0)) {
+                                    var ipa_letter = key[next_combo];
+                                    count += 2;
+                                }
+                                else if (letter == "y") {
+                                    if ((Object.values(cons).indexOf(last_letter)>= 0)) {
+                                        var ipa_letter = qy_key["y"]["cons_rule"];
+                                    }
+                                    else {
+                                        var ipa_letter = qy_key["y"]["everyw_else"];
+                                    }
+                                    count += 1;
+                                }
+                                else if ((Object.keys(key).indexOf(letter)>= 0)) {
+                                    var ipa_letter = key[letter];
+                                    count += 1;
+                                }
+                            }
+                            else {
+                                if (letter == "y") {
+                                    if ((Object.values(cons).indexOf(last_letter)>= 0)) {
+                                        var ipa_letter = qy_key["y"]["cons_rule"];
+                                    }
+                                    else {
+                                        var ipa_letter = qy_key["y"]["everyw_else"];
+                                    }
+                                    count += 1;
+                                }
+                                else if ((Object.keys(key).indexOf(letter)>= 0)) {
+                                    var ipa_letter = key[letter];
+                                    count += 1;
+                                }
+                                else {
+                                    var ipa_letter = letter;
+                                    count += 1;
+                                }
+                            }
+                        }
+                    }
+                    new_word.push (ipa_letter);
+                }
+            }
+            output.push ((new_word.join('')));
+        }
+        document.getElementById("ipa").value = output.join(" ");
+    };
+</script>
+
