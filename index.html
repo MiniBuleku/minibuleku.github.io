@@ -23,7 +23,6 @@ input[type=search] {
 }
 
 
-
 h2 {
     font-weight: light;
 }
@@ -46,6 +45,7 @@ h3 {
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+    
 
 </head>
 
@@ -62,7 +62,24 @@ h3 {
         $('<img src="data/Image/load.gif" class="loading" style="position: fixed"></img><br><br>').appendTo('body');
  
     </script> -->
+    <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="xhvnghq8m18ko34">
+    var options = {
+        // Shared link to Dropbox file
+        link: "https://www.dropbox.com/sh/r69lfgcn2pi0knq/AAANmiLMrkhmDwIOfifFavdAa?dl=0",
+        file: {
+            // Sets the zoom mode for embedded files. Defaults to 'best'.
+            zoom: "best" // or "fit"
+        },
+        folder: {
+            // Sets the view mode for embedded folders. Defaults to 'list'.
+            view: "list", // or "grid"
+            headerSize: "normal" // or "small"
+        }
+        }
+        Dropbox.embed(options, element);
+    </script>
     <script>
+
 
         $(document).ready( function () {
             $('#table_id').DataTable( {
@@ -24088,7 +24105,6 @@ h3 {
 </div>
 <br>
 <h4 style="padding-left:40px; font-size: 15px; font-weight: 200">Contact: minibuleku@gmail.com</h3><br>
-
 
 </body>
 
