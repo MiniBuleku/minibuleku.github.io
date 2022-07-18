@@ -24077,7 +24077,7 @@ padding-bottom: 10px;
                     "targets": 0,
                     "data": "entry",
                     "render": function (data, type, row, meta) {
-                        return ("<input type='image' src='data/Image/play.png' onclick='media(" + data + ")' id='" + data + "'value='" + data + "'>")
+                        return ("<input type='image' src='data/Image/play.png' onload='media(" + data + ")' id='" + data + "'value='" + data + "'>")
                     }}, {
                     "targets": 4,
                     "data": "scriptText",
@@ -24090,7 +24090,6 @@ padding-bottom: 10px;
                 "order": [[1, "asc"]],
                 "paging": true,
                 "scrollY": "700px",
-                "deferRender": true,
                 "lengthChange": false,
                 "pageLength": 75,
                 "language": {
@@ -24102,14 +24101,17 @@ padding-bottom: 10px;
         } );
 
         function media(entry) {
-            document.getElementById(entry).style.borderRadius = "50%"
-            document.getElementById(entry).style.border = "2px solid blue"
-            new Audio("data/Audio/" + entry + ".wav").play()
-            setTimeout(unlight, 2500)
-            function unlight() {
-                document.getElementById(entry).style.borderRadius = "0"
-                document.getElementById(entry).style.border = "0px"
+            document.getElementById(entry).innerHTML = "<audio id =" + "a" + entry + " src = 'data/Audio/" + entry + ".wav'></audio>"
+            document.getElementById(entry).addEventListener("click", function(){
+                document.getElementById("a" + entry).play()
+                document.getElementById(entry).style.borderRadius = "50%"
+                document.getElementById(entry).style.border = "2px solid blue"
+                setTimeout(unlight, 2500)
+                function unlight() {
+                    document.getElementById(entry).style.borderRadius = "0"
+                    document.getElementById(entry).style.border = "0px"
             }
+            })
         }
 
     </script>
