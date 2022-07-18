@@ -24078,7 +24078,7 @@ padding-bottom: 10px;
                     "targets": 0,
                     "data": "entry",
                     "render": function (data, type, row, meta) {
-                        return ("<input type='image' src='data/Image/play.png' onclick='media(" + data + ")' id='" + data + "'value='" + data + "'>")
+                        return ("<p onclick='media(" + data + ")' id='" + data + "'value='" + data + "'>" + data + "</p>")
                     }}, {
                     "targets": 4,
                     "data": "scriptText",
@@ -24102,13 +24102,13 @@ padding-bottom: 10px;
         } );
 
         function media(entry) {
-            document.getElementById(entry).style.borderRadius = "50%"
-            document.getElementById(entry).style.border = "2px solid blue"
+            document.getElementById(entry).style.color = "blue"
+            document.getElementById(entry).style.fontWeight = "bold"
             new Audio("data/Audio/" + entry + ".wav").play()
             setTimeout(unlight, 2500)
             function unlight() {
-                document.getElementById(entry).style.borderRadius = "0"
-                document.getElementById(entry).style.border = "0px"
+                document.getElementById(entry).style.color = "black"
+                document.getElementById(entry).style.fontWeight = "normal"
             }
         }
 
