@@ -51,7 +51,7 @@ h2.data {
     color:black;
     padding-right: 10px;
     font-weight: normal;
-    font-size: 20px
+    font-size: 22px
 }
 
 #verb {
@@ -149,20 +149,13 @@ padding-bottom: 10px;
   </nav>
 
 <div class = "f">
-        <h3>Input written verb stem or "-mbi" form: </h3>
-        <input type="text" id="verb"><br><br>
+        <h3>Input written verb stem or "-mbi" form:<br><h3 style="font-weight: normal">(via Möllendorff transcription system; input v for letter ū) </h3></h3>
+        <input type="text" id="verb" placeholder="tacimbi"><br><br>
         <button type="button" id="sub">Conjugate</button><br>
 </div>
 
 
 <div class = "g">
-    <h3 style="font-weight: normal">Sources Consulted:
-        <ul>
-            <li>Liliya M. Gorelova's <i>Manchu Grammar</i> (2002)</li>
-            <li>Jerry Norman's <i>Manchu Grammatical Sketch</i> (2012)</li>
-            <li>Note: This app follows the Möllendorff transcription system, with one modification: input v for letter ū</li>
-        </ul>
-    </h3>
     <h2 id = "head" type = "head" class="data">Imperative: </h2><h2 class="data" id="Imperative"></h2><br>
     <h2 id = "head" class="data">Imperfect Participle: </h2><h2 class="data"id="Imperfect Participle"></h2><br>
     <h2 id = "head" class="data">Perfect Participle: </h2><h2 class="data"id="Perfect Participle"></h2><br>
@@ -363,8 +356,7 @@ padding-bottom: 10px;
         for (item of list) {
             document.getElementById("verb").value = item
             var toprint = conjugate()
-            var listy = []
-            big_list.push(listy)
+            big_list.push(toprint)
         }
         return big_list
     }
