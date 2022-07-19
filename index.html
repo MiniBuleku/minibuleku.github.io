@@ -24077,7 +24077,7 @@ padding-bottom: 10px;
                     "targets": 0,
                     "data": "entry",
                     "render": function (data, type, row, meta) {
-                        return ("<img src='data/Image/play.png' loading = 'lazy' onload = 'adder(" + data + ")' class = 'pic' id='" + data + "'value='" + data + "'>")
+                        return ("<img src='data/Image/play.png' loading = 'lazy' onload = 'player(" + data + ")' class = 'pic' id='" + data + "'value='" + data + "'>")
                     }}, {
                     "targets": 4,
                     "data": "scriptText",
@@ -24092,7 +24092,7 @@ padding-bottom: 10px;
                 "scrollY": "700px",
                 "lengthChange": false,
                 "deferRender": true,
-                "pageLength": 100,
+                "pageLength": 50,
                 "language": {
                     "search": "Search/搜索:"
                 }
@@ -24118,25 +24118,24 @@ padding-bottom: 10px;
 
 
 
-        function adder(entry) {
-            // document.getElementById(entry).innerHTML = "<audio id =" + "a" + entry + " src = 'data/Audio/" + entry + ".wav'></audio>"
-            // document.getElementById(entry).addEventListener("click", function(){
-            //     document.getElementById("a_" + entry).play()
-            //     document.getElementById(entry).style.borderRadius = "50%"
-            //     document.getElementById(entry).style.border = "2px solid blue"
-            //     setTimeout(unlight, 2500)
-            //     function unlight() {
-            //         document.getElementById(entry).style.borderRadius = "0"
-            //         document.getElementById(entry).style.border = "0px"
-            // }
-            // })
-            onVisible(entry, player)
-        }
+        // function adder(entry) {
+        //     // document.getElementById(entry).innerHTML = "<audio id =" + "a" + entry + " src = 'data/Audio/" + entry + ".wav'></audio>"
+        //     // document.getElementById(entry).addEventListener("click", function(){
+        //     //     document.getElementById("a_" + entry).play()
+        //     //     document.getElementById(entry).style.borderRadius = "50%"
+        //     //     document.getElementById(entry).style.border = "2px solid blue"
+        //     //     setTimeout(unlight, 2500)
+        //     //     function unlight() {
+        //     //         document.getElementById(entry).style.borderRadius = "0"
+        //     //         document.getElementById(entry).style.border = "0px"
+        //     // }
+        //     // })
+        //     onVisible(entry, player)
+        // }
 
-            function player(entry) {
-            console.log(entry)
+        function player(entry) {
             document.getElementById(entry).innerHTML = "<audio id =" + "a" + entry + " src = 'data/Audio/" + entry + ".wav'></audio>"
-            document.getElementById(entry).addEventListener("click", function(){
+            document.getElementById(entry).addEventListener("click", function playt(){
                 document.getElementById("a" + entry).play()
                 document.getElementById(entry).style.borderRadius = "50%"
                 document.getElementById(entry).style.border = "2px solid blue"
@@ -24144,10 +24143,10 @@ padding-bottom: 10px;
                 function unlight() {
                     document.getElementById(entry).style.borderRadius = "0"
                     document.getElementById(entry).style.border = "0px"
-            }
+                }
+                document.removeEventListener("click", playt)
             })
             }
-    
 
     </script>
 
