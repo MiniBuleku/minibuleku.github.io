@@ -185,7 +185,7 @@ padding-bottom: 10px;
 
     function conjugate () {
 
-        var stem = document.getElementById("verb").value
+        var stem = document.getElementById("verb").value.toLowerCase()
 
         if (stem.slice(-3) == "mbi") {
             stem = stem.slice(0, -3)
