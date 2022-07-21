@@ -149,7 +149,7 @@ padding-bottom: 10px;
   </nav>
 
 <div class = "f">
-        <h3>Input written verb stem or "-mbi" form:<br><h3 style="font-weight: normal">(via Möllendorff transcription system; input v for letter ū) </h3></h3>
+        <h3>Input written verb stem or "-mbi" form:<br><h3 style="font-weight: normal">(via Möllendorff transcription; input v for letter ū, x for š) </h3></h3>
         <input type="text" id="verb" placeholder="tacimbi"><br><br>
         <button type="button" id="sub">Conjugate</button><br>
 </div>
@@ -186,7 +186,6 @@ padding-bottom: 10px;
     function conjugate () {
 
         var stem = document.getElementById("verb").value
-
 
         if (stem.slice(-3) == "mbi") {
             stem = stem.slice(0, -3)
@@ -257,16 +256,284 @@ padding-bottom: 10px;
 
         var letter = vowel_harmony(last_vowels)
 
-        var perf_exceptions = [
-            ["algi", "ešu", "bisa", "dosi", "gala", "gvwaliya", "hami", "isi", "jalu", "jura", "tafa", "tafu", "wasi"], 
-            ["je", "dule", "ebere", "elde", "fuse", "gere", "mukde", "tuci", "tuhe", "wesi"], 
-            ["colgoro", "soro", "tohoro"]
-        ]
+        var exceptions = {
+            "baha": {
+                "PP": "baha"
+            },
+            "bai": {
+                "I": "baisu",
+                "PP": "baiha",
+                "IP": "baire",
+            },
+            "ba": {
+                "PP": "bangka",
+                "IP": "bandara"
+            },
+            "bi": {
+                "I": "bisu",
+                "PP": "bihe",
+                "IP": "bisire"
+            },
+            "bisra": {
+                "PC": "bisarapi"
+            },
+            "bo": {
+                "PP": "bongko",
+                "IP": "bore, bondoro"
+            },
+            "bonme": {
+                "PP": "bongko",
+                "IP": "bore, bondoro"
+            },
+            "ca": {
+                "PP": "caha, cangka",
+                "IP": "cara",
+                "PC": "cafi"
+            },
+            "colgoro": {
+                "PP": "colgoroko",
+                "IP": "colgororo",
+                "PC": "colgoropi"
+            },
+            "daha": {
+                "PP": "daha"
+            },
+            "desere": {
+                "PC": "deserepi"
+            },
+            "dukse": {
+                "PC": "duksepi"
+            },
+            "dule": {
+                "PC": "dulepi"
+            },
+            "elde": {
+                "PP": "eldeke",
+                "IP": "eldere",
+                "PC": "eldepi"
+            },
+            "eye": {
+                "PC": "eyepi"
+            },
+            "falara": {
+                "PC": "falarapi"
+            },
+            "fara": {
+                "PP": "faraha, faraka",
+                "IP": "farara",
+                "PC": "farapi"
+            },
+            "febu": {
+                "PP": "febuhe",
+                "IP": "febure",
+                "PC": "fempi",
+            },
+            "fe": {
+                "PP": "febuhe",
+                "IP": "febure",
+                "PC": "fempi",            
+            },
+            "fo": {
+                "PP": "foha",
+                "IP": "fore",
+                "PC" :"fompi",
+                "C": "fomci"
+            },
+            "foso": {
+                "PC": "fosopi"
+            },
+            "fu": {
+                "PP": "fungke",
+                "PC": "fumpi"
+            },
+            "gai": {
+                "I": "gaisu",
+                "PP": "gaiha",
+                "IP": "gaire",
+            },
+            "gaji": {
+                "I": "gaju"
+            },
+            "gere": {
+                "PP": "gerehe, gereke",
+                "IP": "gerere, gerendere"
+            },
+            "go": {
+                "PP": "goha",
+                "IP": "gondoro"
+            },
+            "guwe": {
+                "PP": "guwengke",
+                "IP": "guwendere",
+                "PC": "guwempi",
+                "C": "guwen"
+            },
+            "gv": {
+                "PP": "gvha",
+                "IP": "gvndere"
+            },
+            "gvwaliya": {
+                "PP": "gvwaliyaka",
+                "IP": "gvwaliyara",
+                "PC": "gvwaliyapi, hvwaliyapi"
+            },
+            "hafu": {
+                "PP": "hafuka",
+                "IP": "hafundere",
+                "PC": "hafupi"
+            },
+            "hata": {
+                "PP": "hataha",
+                "IP": "hatara, hatandara"
+            },
+            "juila": {
+                "PP": "jailaha",
+                "IP": "jailara, jailandara"
+            },
+            "jaksa": {
+                "PC": "jaksapi"
+            },
+            "jala": {
+                "PP": "jalaka",
+                "IP": "jalara, jalandra",
+                "PC": "jalapi"
+            },
+            "jalu": {
+                "PP": "jaluka",
+                "IP": "jalura",
+                "PC": "jalupi"
+            },
+            "je": {
+                "I": "jefu",
+                "PP": "jeke, jengke",
+                "IP": "jetere, jendere",
+                "PC": "jempi" 
+            },
+            "ji": {
+                "I": "jio, ju",
+                "PP": "jihe",
+                "IP": "jidere"
+            },
+            "jo": {
+                "PP": "jongko",
+                "IP":"jondoro",
+                "PC": "jompi",
+                "C": "jonci",
+                "O": "jongki"
+            },
+            "ju": {
+                "PP": "jungke",
+                "IP": "jure",
+                "PC": "jumpi",
+                "O": "jubki"
+            },
+            "jura": {
+                "PC": "jurapi"
+            },
+            "juwa": {
+                "PP": "juwangka, juwaka",
+                "IP": "juwara, jore",
+                "PC": "juwampi"
+            },
+            "nioro": {
+                "PC": "nioropi"
+            },
+            "o": {
+                "I": "oso",
+                "PP": "oho",
+                "IP": "ojoro"
+            },
+            "oo": {
+                "I": "oso",
+                "PP": "oho",
+                "IP": "ojoro"
+            },
+            "sa": {
+                "PP": "sangka",
+                "IP": "sara",
+                "PC": "sampi"
+            },
+            "se": {
+                "PP": "sengke",
+                "IP": "sere"
+            },
+            "soso": {
+                "PP": "sosoko",
+                "IP": "sosoro",
+                "PC": "sosopi"
+            },
+            "su": {
+                "PP": "sungke",
+                "IP": "sure"
+            },
+            "xahvra": {
+                "PP": "xahvraka",
+                "IP": "xahvrara",
+                "PC": "xahvrapi"
+            },
+            "xa": {
+                "PP": "xangka, xaha",
+                "IP": "xara"
+            },
+            "xara": {
+                "PC": "xarapi"
+            },
+            "xu": {
+                "PP": "xungke",
+                "IP": "xure",
+                "PC": "xumpi"
+            },
+            "teye": {
+                "PP": "teyehe",
+                "IP": "teyere, teyendere"
+            },
+            "tuci": {
+                "I": "tucinu",
+                "PP": "tucihe, tucike",
+                "IP": "tucire"
+            },
+            "uka": {
+                "PP": "ukaha, ukaka",
+                "IP": "ukara, ukandara"
+            },
+            "wasi": {
+                "I": "wasinu",
+                "PP": "wasika, wasiha",
+                "IP": "wasire"
+            },
+            "we": {
+                "PP":"wengke",
+                "IP": "were, wendere",
+                "PC": "wempi",
+            },
+            "weme": {
+                "PP":"wengke",
+                "IP": "were, wendere",
+                "PC": "wempi"            
+            },
+            "wesi": {
+                "I": "wesinu",
+                "PP": "wesike",
+                "IP": "wesire",
+                "PC": "wesipi"
+            },
+            "yo": {
+                "PP": "yoha",
+                "IP": "yoro, yondoro"
+            },
+            "yu": {
+                "PP": "yungke",
+                "IP": "yudere, yundere",
+                "PC": "yumpi"
+            }
+        }
 
-        var perf_conv_exceptions = [
-            ["sa", "juwa", "we", "yu", "je"], 
-            ["hvwaliya", "colgoro", "desere", "dule", "gvwaliya", "suma"] 
-        ]
+
+        add_stem = "off" 
+        if (exceptions.hasOwnProperty(final_stem)) {
+            stem = final_stem
+            add_stem = "on"
+        }
 
         var results = {
         "Imperative": stem,
@@ -284,10 +551,29 @@ padding-bottom: 10px;
         "Temeritive": stem + "rahv"
         }
 
-        if (last_vowels[0] == "a") {
-            results["Imperfect Participle"] = stem + "ra"
+        if (exceptions.hasOwnProperty(stem)) {
+            if (exceptions[stem].hasOwnProperty("IP")) {
+                results["Imperfect Participle"] = exceptions[stem]["IP"]
+            }
+            else {
+                if (last_vowels[0] == "a") {
+                results["Imperfect Participle"] = stem + "ra"
+                }
+        
+                else if (Object.values(["e", "i", "u", "v"]).indexOf(last_vowels[0]) >= 0) {
+                results["Imperfect Participle"] = stem + "re"
+                }
+
+                else if (last_vowels[0] == "o") {
+                results["Imperfect Participle"] = stem + "ro"
+                }
+            }
         }
 
+        else if (last_vowels[0] == "a") {
+            results["Imperfect Participle"] = stem + "ra"
+        }
+        
         else if (Object.values(["e", "i", "u", "v"]).indexOf(last_vowels[0]) >= 0) {
             results["Imperfect Participle"] = stem + "re"
         }
@@ -296,15 +582,21 @@ padding-bottom: 10px;
             results["Imperfect Participle"] = stem + "ro"
         }
 
-        if (Object.values(perf_exceptions[0]).indexOf(stem) >= 0) {
-            results["Perfect Participle"] = stem + "ka"
-        }
-        else if (Object.values(perf_exceptions[1]).indexOf(stem) >= 0) {
-            results["Perfect Participle"] = stem + "ke"
-        }
-
-        else if (Object.values(perf_exceptions[2]).indexOf(stem) >= 0) {
-            results["Perfect Participle"] = stem + "ko"
+        if (exceptions.hasOwnProperty(stem)) {
+            if (exceptions[stem].hasOwnProperty("PP")) {
+                results["Perfect Participle"] = exceptions[stem]["PP"]
+            }
+            else {
+                if (Object.values(back_vowels).indexOf(letter) >= 0) {
+                    results["Perfect Participle"] = stem + "ha"
+                }
+                else if ((Object.values(front_vowels).indexOf(letter) >= 0) && (letter != "o")) {
+                    results["Perfect Participle"] = stem + "he"
+                }
+                else if (letter == "o") {
+                    results["Perfect Participle"] = stem + "ho"
+                }
+            }
         }
         
         else if (Object.values(back_vowels).indexOf(letter) >= 0) {
@@ -317,12 +609,15 @@ padding-bottom: 10px;
             results["Perfect Participle"] = stem + "ho"
         }
 
-        if (Object.values(perf_conv_exceptions[0]).indexOf(stem) >= 0) {
-            results["Perfect Converb"] = stem + "mpi"
+        if (exceptions.hasOwnProperty(stem)) {
+            if (exceptions[stem].hasOwnProperty("PC")) {
+                results["Perfect Converb"] = exceptions[stem]["PC"]
+            }
+            else {
+                results["Perfect Converb"] = stem + "fi"
+            }
         }
-        else if (Object.values(perf_conv_exceptions[1]).indexOf(stem) >= 0) {
-            results["Perfect Converb"] = stem + "pi"
-        }
+
         else {
             results["Perfect Converb"] = stem + "fi"
         }
@@ -350,17 +645,40 @@ padding-bottom: 10px;
         else if (letter == "o") {
             results["Prefatory Converb"] = stem + "nggolo"
         }
-        
-        for (category of Object.keys(results)){
-            document.getElementById(category).innerHTML = results[category]
+
+        if (exceptions.hasOwnProperty(stem)) {
+            if (exceptions[stem].hasOwnProperty("C")) {
+                results["Conditional Converb"] = exceptions[stem]["C"]
+            }
+        }
+        if (exceptions.hasOwnProperty(stem)) {
+            if (exceptions[stem].hasOwnProperty("O")) {
+                results["Optative"] = exceptions[stem]["O"]
+            }
         }
 
+        if (exceptions.hasOwnProperty(stem)) {
+            if (exceptions[stem].hasOwnProperty("I")) {
+                results["Imperative"] = exceptions[stem]["I"]
+            }
+        }
+
+        for (category of Object.keys(results)){
+            word = ""
+            if (add_stem == "on") {
+                word = (stem_array.slice(0, -1)).join(" ") + " "
+            }
+            results[category] = word + results[category]
+            document.getElementById(category).innerHTML = results[category]
+        }
         return results
+
     }
 
     function printconjugate(list) {
         big_list = []
         for (item of list) {
+            console.log(item)
             document.getElementById("verb").value = item
             var toprint = conjugate()
             big_list.push(toprint)
