@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<style>
+    
+body { 
+  font: 15px/1.3em 'Verdana';
+}
+
+th {
+    font-size: 17px
+}
+
+#table_id_filter {
+    font-size: 17px;
+    margin-bottom: 20px
+}
+
+input[type=search] {
+    height: 25px;
+}
+
+
+h2 {
+    font-weight: light;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 15px;
+    
+    
+}
+
+a {
+ text-decoration: none;
+}
+li {
+ list-style: none;
+ display: inline;
+}
+
+.navbar {
+padding-top: 5px;
+padding-bottom: 10px;
+ color: #fff;
+ text-align: center;
+}
+
+
+.nav-links a {
+ color: black;
+ text-align: center
+}
+/* LOGO */
+.logo {
+ font-size: 32px;
+}
+/* NAVBAR MENU */
+.menu {
+ gap: 1em;
+ font-size: 20px;
+}
+.menu li:hover {
+ background-color: lightgrey;
+ border-radius: 5px;
+ transition: 0.3s ease;
+}
+.menu li {
+ padding: 5px 14px;
+ display:inline-block;
+ background-color: #ECECEC;
+}
+
+
+</style>
+    <meta charset="utf-8">
+<!--     <meta content="width=device-width, initial-scale=1" name="viewport">  -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mini Buleku</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+    
+
+</head>
+
+<body>
+    <img style="display: block; margin-left: auto; margin-right: auto" src="data/Image/title.png"></img>
+    <nav class="navbar">
+        
+        <!-- LOGO -->
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+          <!-- NAVIGATION MENUS -->
+          <div class="menu">
+            <li><a href="/">Home 主頁</a></li>
+            <li><a href="/bio">About 關於</a></li>
+            <li><a href="/phrase">Phrases 會話</a></li>
+            <li><a href="/ipa">Inventory 語音</a></li>
+            <li><a href="/conjugate">Conjugator 動詞變化</a></li>
+            <li><a href="/video">Videos 影片</a></li>
+          </div>
+        </ul>
+      </nav>
+
+      
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script> -->
+    <!-- <script src="js/jquery.csv.min.js"></script> -->
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <!-- <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script> -->
+    <!-- <script src="js/csv_to_html_table.js"></script> -->
+
+    <!-- <script>
+        $('<img src="data/Image/load.gif" class="loading" style="position: fixed"></img><br><br>').appendTo('body');
+ 
+    </script> -->
+
+    <script>
+        $(document).ready( function () {
+            $('#table_id').DataTable( {
+                data: [
+    {
+        "order": 1,
+        "sentence": "00000007",
+        "spoken": "hoX na?",
+        "written": "hojo nio?",
+        
+        "mandarin": "你好.",
+        "english": "Hello (lit. are you well?)",
+        "category": "Self-introduction (自介)"
+    },
+    {
+        "order": 2,
+        "sentence": "00000009",
+        "spoken": "gel omye.",
+        "written": "geli ombi.",
+        
+        "mandarin": "还不错.",
+        "english": "Good.",
+        "category": "Self-introduction (自介)"
+    },
+    {
+        "order": 3,
+        "sentence": "00000008",
+        "spoken": "hojo hojo, baniha.",
+        "written": "hojo hojo, baniha.",
+        
+        "mandarin": "很好, 谢谢.",
+        "english": "Great, thank you",
+        "category": "Self-introduction (自介)"
+    },
+    {
+        "order": 4,
+        "sentence": "00000010",
+        "spoken": "sin gevev ai zemye?",
+        "written": "sini gebu be ai sembi?",
+        
+        "mandarin": "请问你叫什么名字？",
+        "english": "Excuse me, what is your name?",
+        "category": "Self-introduction (自介)"
+    },
+    {
+        "order": 5,
+        "sentence": "00000012",
+        "spoken": "min gevev [meN Zung lu] zem.",
+        "written": "mini gebu be [meng Zung lu] sembi.",
+        
+        "mandarin": "我叫[孟荣路].",
+        "english": "My name is [Meng Rong Lu]",
+        "category": "Self-introduction (自介)"
+    },
+    {
+        "order": 6,
+        "sentence": "00000013",
+        "spoken": "sinm tahhed umesy urVunjemye.",
+        "written": "simbe takaha de umesi urgunjembi.",
+        
+        "mandarin": "很高兴认识你.",
+        "english": "Nice to meet you",
+        "category": "Self-introduction (自介)"
+    },
+    {
+        "order": 7,
+        "sentence": "00000015",
+        "spoken": "bini manjw. // bi sivE.",
+        "written": "bi inu manju. // bi sibe.",
+        
+        "mandarin": "我是满洲人 // 我是锡伯族人.",
+        "english": "I am Manchu / I am Sibe.",
+        "category": "Self-introduction (自介)"
+    },
+    {
+        "order": 8,
+        "sentence": "00000001",
+        "spoken": "bei Gwa gurund genem dulVeina?",
+        "written": "bei gvwa gurun de geneme dulekebi nio?",
+        
+        "mandarin": "你去过其他国家吗？",
+        "english": "Have you been to other countries?",
+        "category": "Self-introduction (自介)"
+    },
+    {
+        "order": 9,
+        "sentence": "00000002",
+        "spoken": "sin bo Gazen yavad bye?",
+        "written": "sini boo gaxan ya bade bi?",
+        
+        "mandarin": "你家乡在哪里？",
+        "english": "Where is your hometown?",
+        "category": "Self-introduction (自介)"
+    },
+    {
+        "order": 10,
+        "sentence": "00000014",
+        "spoken": "si aivi deri(ci) jiVeNE?",
+        "written": "si aibi deri (ci) jihengge?",
+        
+        "mandarin": "你来自哪里？",
+        "english": "Where are you from?",
+        "category": "Self-introduction (自介)"
+    },
+    {
+        "order": 11,
+        "sentence": "00000003",
+        "spoken": "bi [mewden] hotonci jiVeng.",
+        "written": "bi [mukden] hoton ci jihengge.",
+        
+        "mandarin": "我来自[沈阳].",
+        "english": "I am from [Shenyang].",
+        "category": "Self-introduction (自介)"
+    },
+    {
+        "order": 12,
+        "sentence": "00000004",
+        "spoken": "si aivid teVeye",
+        "written": "si aibide tehebi ",
+        
+        "mandarin": "你住哪里？",
+        "english": "Where do you live?",
+        "category": "Self-introduction (自介)",
+        "undefined": "w"
+    },
+    {
+        "order": 13,
+        "sentence": "00000005",
+        "spoken": "bei udw sE oRuye?",
+        "written": "beye udu se ohobi?",
+        
+        "mandarin": "你几岁？",
+        "english": "How old are you?",
+        "category": "Self-introduction (自介)"
+    },
+    {
+        "order": 14,
+        "sentence": "00000006",
+        "spoken": "bei ai veilen aremye?",
+        "written": "beye ai weilen arambi?",
+        
+        "mandarin": "你做什么工作？",
+        "english": "What work do you do?",
+        "category": "Self-introduction (自介)"
+    },
+    {
+        "order": 15,
+        "sentence": "00000016",
+        "spoken": "siram aXkye.",
+        "written": "sirame acaki.",
+        
+        "mandarin": "再见 (以后见).",
+        "english": "Bye (see you later)",
+        "category": "Greetings/departures (招呼/道别)"
+    },
+    {
+        "order": 16,
+        "sentence": "00000017",
+        "spoken": "jai aXkye.",
+        "written": "jai acaki.",
+        
+        "mandarin": "拜拜 (再见).",
+        "english": "Bye (see you again)",
+        "category": "Greetings/departures (招呼/道别)"
+    },
+    {
+        "order": 17,
+        "sentence": "00000018",
+        "spoken": "erdE elx syan yilaRei na?",
+        "written": "erde elhe sain ilihabi nio?",
+        
+        "mandarin": "早上安.",
+        "english": "Good morning (greeting)",
+        "category": "Greetings/departures (招呼/道别)"
+    },
+    {
+        "order": 18,
+        "sentence": "00000020",
+        "spoken": "yamjy elx syan yilaRei na?",
+        "written": "yamji elhe sain ilihabi nio?",
+        
+        "mandarin": "晚上好.",
+        "english": "Good evening",
+        "category": "Greetings/departures (招呼/道别)"
+    },
+    {
+        "order": 19,
+        "sentence": "00000022",
+        "spoken": "baniha.",
+        "written": "baniha.",
+        
+        "mandarin": "谢谢.",
+        "english": "Thank you",
+        "category": "Polite Expressions (敬语)"
+    },
+    {
+        "order": 20,
+        "sentence": "00000023",
+        "spoken": "baitaqw / em antherer.",
+        "written": "baitakv / ume antaharara.",
+        
+        "mandarin": "不客气.",
+        "english": "You're welcome",
+        "category": "Polite Expressions (敬语)"
+    },
+    {
+        "order": 21,
+        "sentence": "00000024",
+        "spoken": "emdan fyensykye zem.",
+        "written": "emu mudan fonjiki sembi.",
+        
+        "mandarin": "请问.",
+        "english": "Excuse me",
+        "category": "Polite Expressions (敬语)"
+    },
+    {
+        "order": 22,
+        "sentence": "00000026",
+        "spoken": "halhali / mineN aceneGuRui.",
+        "written": "halhali / miningge acanarakv ohobi.",
+        
+        "mandarin": "对不起.",
+        "english": "Sorry",
+        "category": "Polite Expressions (敬语)"
+    },
+    {
+        "order": 23,
+        "sentence": "00000027",
+        "spoken": "baitaqw.",
+        "written": "baitakv.",
+        
+        "mandarin": "没关系.",
+        "english": "No worries",
+        "category": "Polite Expressions (敬语)"
+    },
+    {
+        "order": 24,
+        "sentence": "00000075",
+        "spoken": "bi manjw gizun gizerem baRenem.",
+        "written": "bi manju gisun gisureme bahanambi.",
+        
+        "mandarin": "我会说满语.",
+        "english": "I can speak Manchu.",
+        "category": "Language (语言)"
+    },
+    {
+        "order": 25,
+        "sentence": "00000076",
+        "spoken": "bi manjw gizun gizerem baReneqw.",
+        "written": "bi manju gisun gisureme bahanarakv.",
+        
+        "mandarin": "我不会说满语.",
+        "english": "I can't speak Manchu.",
+        "category": "Language (语言)"
+    },
+    {
+        "order": 26,
+        "sentence": "00000077",
+        "spoken": "si manjw gizun gizerem baRenem na?",
+        "written": "si manju gisun gisureme bahanambi nio?",
+        
+        "mandarin": "你会说满语吗？",
+        "english": "Can you speak Manchu?",
+        "category": "Language (语言)"
+    },
+    {
+        "order": 27,
+        "sentence": "00000078",
+        "spoken": "bi dyenjim ulyVuGw.",
+        "written": "bi donjime ulhirakv.",
+        
+        "mandarin": "我听不懂.",
+        "english": "I don't understand. ",
+        "category": "Language (语言)"
+    },
+    {
+        "order": 28,
+        "sentence": "00000079",
+        "spoken": "gel emdan gizer.",
+        "written": "geli emdan gisure.",
+        
+        "mandarin": "请再说一遍.",
+        "english": "Please say that again.",
+        "category": "Language (语言)"
+    },
+    {
+        "order": 29,
+        "sentence": "00000080",
+        "spoken": "si manjw gizunb tacim yask guidaReye?",
+        "written": "si manju gisun be tacime ya gese goidahabi?",
+        
+        "mandarin": "你学满语多久?",
+        "english": "How long have you been learning Manchu?",
+        "category": "Language (语言)"
+    },
+    {
+        "order": 30,
+        "sentence": "00000081",
+        "spoken": "[birav] afsy gizeremye?",
+        "written": "[bira be] absi gisurembi?",
+        
+        "mandarin": "我要[三]人间.",
+        "english": "How do you say [\"river\"]?",
+        "category": "Language (语言)"
+    },
+    {
+        "order": 31,
+        "sentence": "00000082",
+        "spoken": "[feksim] ni ai gonin?",
+        "written": "[feksim] inu ai gvnin? ",
+        
+        "mandarin": "[跑]是什么意思?",
+        "english": "What does [\"run\"] mean?",
+        "category": "Language (语言)"
+    },
+    {
+        "order": 32,
+        "sentence": "00000059",
+        "spoken": "son bo udw aNelE?",
+        "written": "suweni boo udu anggala?",
+        
+        "mandarin": "你家里有几个人?",
+        "english": "How many people are there in your family?",
+        "category": "Family (家人)"
+    },
+    {
+        "order": 33,
+        "sentence": "00000060",
+        "spoken": "sind aRun du eyun nun bina?",
+        "written": "sinde ahvn deo eyun nun bi nio?",
+        
+        "mandarin": "你有兄弟姐妹吗？",
+        "english": "Do you have any siblings?",
+        "category": "Family (家人)"
+    },
+    {
+        "order": 34,
+        "sentence": "00000061",
+        "spoken": "sind udw aRun du eyun nun bye?",
+        "written": "sinde udu ahvn deo eyun nun bi?",
+        
+        "mandarin": "你有几个兄弟姐？",
+        "english": "How many siblings do you have?",
+        "category": "Family (家人)"
+    },
+    {
+        "order": 35,
+        "sentence": "00000062",
+        "spoken": "mind [em eyun] bi.",
+        "written": "minde [emu eyun] bi.",
+        
+        "mandarin": "我有[一个姐姐].",
+        "english": "I have [one older sister].",
+        "category": "Family (家人)"
+    },
+    {
+        "order": 36,
+        "sentence": "00000063",
+        "spoken": "si emgeri holfxei na? ",
+        "written": "si emgeri holbohobi nio?",
+        
+        "mandarin": "你结婚了吗？",
+        "english": "Are you married?",
+        "category": "Family (家人)"
+    },
+    {
+        "order": 37,
+        "sentence": "00000064",
+        "spoken": "mind [ju age em nun] bi. ",
+        "written": "minde [pjuwe age emu nun] bi. ",
+        
+        "mandarin": "我有[两个哥哥和一个妹妹].",
+        "english": "I have [two older brothers and one younger sister].",
+        "category": "Family (家人)"
+    },
+    {
+        "order": 38,
+        "sentence": "00000053",
+        "spoken": "EneNei afqa afsy yilaReye?",
+        "written": "enenggi i abka absi ilihabi?",
+        
+        "mandarin": "今天的天气怎么样？",
+        "english": "How is the weather today?",
+        "category": "Weather (天气)"
+    },
+    {
+        "order": 39,
+        "sentence": "00000054",
+        "spoken": "si ya forRunv ujud cyaNNE?",
+        "written": "si ya forgon be uju de cihangga?",
+        
+        "mandarin": "你最喜欢哪一季？",
+        "english": "What is your favorite season?",
+        "category": "Weather (天气)"
+    },
+    {
+        "order": 40,
+        "sentence": "00000055",
+        "spoken": "EneN hen halRun / saRurun.",
+        "written": "enenggi hon halhvn / xahvrun.",
+        
+        "mandarin": "今天很热 / 冷.",
+        "english": "Today is hot / cold.",
+        "category": "Weather (天气)"
+    },
+    {
+        "order": 41,
+        "sentence": "00000056",
+        "spoken": "tE aRa / nimaN damai.",
+        "written": "te aga / nimanggi damahabi.",
+        
+        "mandarin": "现在下雨 / 下雪.",
+        "english": "It is raining / snowing right now. ",
+        "category": "Weather (天气)"
+    },
+    {
+        "order": 42,
+        "sentence": "00000057",
+        "spoken": "cimar aRa damna.",
+        "written": "cimari aga dambi nio .",
+        
+        "mandarin": "明天会下雨吗？",
+        "english": "Will it rain tomorrow?",
+        "category": "Weather (天气)"
+    },
+    {
+        "order": 43,
+        "sentence": "00000058",
+        "spoken": "tE afqa tuksuN / GalRei.",
+        "written": "te abka dushungge / galahabi.",
+        
+        "mandarin": "现在阴天 / 阳天.",
+        "english": "It is cloudy / clear right now.",
+        "category": "Weather (天气)"
+    },
+    {
+        "order": 44,
+        "sentence": "00000065",
+        "spoken": "te ai erin oRuye?",
+        "written": "te ai erin ohobi .",
+        
+        "mandarin": "现在几点？",
+        "english": "What time is it now?",
+        "category": "Time/holidays (时间/节日)"
+    },
+    {
+        "order": 45,
+        "sentence": "00000066",
+        "spoken": "eneN yacy yineN oRuye?",
+        "written": "enenggi yaci inenggi ohobi?",
+        
+        "mandarin": "今天几月几号？",
+        "english": "What is the date today?",
+        "category": "Time/holidays (时间/节日)"
+    },
+    {
+        "order": 46,
+        "sentence": "00000067",
+        "spoken": "si aitiN solo sendamye?",
+        "written": "si atanggi xolo sindambi?",
+        
+        "mandarin": "你什么时候放假？",
+        "english": "When do you go on holiday?",
+        "category": "Time/holidays (时间/节日)"
+    },
+    {
+        "order": 47,
+        "sentence": "00000068",
+        "spoken": "sin banXx yineN aitiNE?",
+        "written": "sini banjiha inenggi atanggi?",
+        
+        "mandarin": "你生日是什么时候？",
+        "english": "When is your birthday?",
+        "category": "Time/holidays (时间/节日)"
+    },
+    {
+        "order": 48,
+        "sentence": "00000069",
+        "spoken": "banXx nineN urVun okiny.",
+        "written": "banjiha inenggi urgun okini .",
+        
+        "mandarin": "生日快乐.",
+        "english": "Happy birthday!",
+        "category": "Time/holidays (时间/节日)"
+    },
+    {
+        "order": 49,
+        "sentence": "00000070",
+        "spoken": "bi keskE ujim.",
+        "written": "bi kesike ujimbi.",
+        
+        "mandarin": "我养猫.",
+        "english": "I have a cat.",
+        "category": "Interests (兴趣)"
+    },
+    {
+        "order": 50,
+        "sentence": "00000071",
+        "spoken": "si yindaRun ujimna?",
+        "written": "si indahvn ujimbi nio?",
+        
+        "mandarin": "你养狗吗？",
+        "english": "Do you have a dog?",
+        "category": "Interests (兴趣)"
+    },
+    {
+        "order": 51,
+        "sentence": "00000072",
+        "spoken": "si ai aXXasuv cyaNNE?",
+        "written": "si ai axxasu be cihangga?",
+        
+        "mandarin": "你喜欢什么动物？",
+        "english": "What animals do you like?",
+        "category": "Interests (兴趣)"
+    },
+    {
+        "order": 52,
+        "sentence": "00000073",
+        "spoken": "si ai bitkE / xElmEfin / talkyafin tamye?",
+        "written": "si ai bithe / helmefin / talkiyafin tambi?",
+        
+        "mandarin": "你看什么书 / 电影 / 电视？",
+        "english": "What books / movies / TV do you like?",
+        "category": "Interests (兴趣)"
+    },
+    {
+        "order": 53,
+        "sentence": "00000074",
+        "spoken": "si aid amuran?",
+        "written": "si ai de amuran?",
+        
+        "mandarin": "你有什么爱好？",
+        "english": "What are your hobbies?",
+        "category": "Interests (兴趣)"
+    },
+    {
+        "order": 54,
+        "sentence": "00000033",
+        "spoken": "[mewdend] geneme pyawri ni yask jiRa?",
+        "written": "[mukden] de geneme piyoori inu ya gese jiha?",
+        
+        "mandarin": "去[沈阳]的票要多少钱?",
+        "english": "How much is a ticket to go to [Shenyang]?",
+        "category": "Transportation (交通)"
+    },
+    {
+        "order": 55,
+        "sentence": "00000034",
+        "spoken": "[mewdend] genem yask erin baitelmye?",
+        "written": "[mukden] de geneme ya gese erin baitalambi?",
+        
+        "mandarin": "去[沈阳]要多长时间？",
+        "english": "How long does it take to go to [Shenyang]?",
+        "category": "Transportation (交通)"
+    },
+    {
+        "order": 56,
+        "sentence": "00000035",
+        "spoken": "[mewden] ci afsy genemye?",
+        "written": "[mukden] ci absi genembi?",
+        
+        "mandarin": "怎么去[沈阳]?",
+        "english": "How do you go to [Shenyang]?",
+        "category": "Transportation (交通)"
+    },
+    {
+        "order": 57,
+        "sentence": "00000036",
+        "spoken": "ai turVund [mewden]d genemye?",
+        "written": "ai turgun de [mukden] de genembi?",
+        
+        "mandarin": "为什么要去[沈阳]?",
+        "english": "Why will you go to [Shenyang]?",
+        "category": "Transportation (交通)"
+    },
+    {
+        "order": 58,
+        "sentence": "00000037",
+        "spoken": "si ai erind genemye / jimye?",
+        "written": "si ai erin de genembi / jimbi?",
+        
+        "mandarin": "你几点去/来？",
+        "english": "When will you go / come?",
+        "category": "bi ilan nyalma dedure boo gaimbi."
+    },
+    {
+        "order": 59,
+        "sentence": "00000038",
+        "spoken": "bi taksid temaq [mewden] ci genem",
+        "written": "bi  taksi de temanggi [mukden] ci genembi?",
+        
+        "mandarin": "我要打车去[沈阳].",
+        "english": "I will take a taxi to [Shenyang]. ",
+        "category": "Transportation (交通)"
+    },
+    {
+        "order": 60,
+        "sentence": "00000039",
+        "spoken": "si minb daReemmaq aivid genemye?",
+        "written": "si mimbe dahabumanggi aivide genembi?",
+        
+        "mandarin": "你带我去哪里？",
+        "english": "Where are you taking me?",
+        "category": "Transportation (交通)"
+    },
+    {
+        "order": 61,
+        "sentence": "00000028",
+        "spoken": "si aivi cyawqw yilaReye?",
+        "written": "si aibi cihakv ilihabi?",
+        
+        "mandarin": "你哪里不舒服？",
+        "english": "Where are you sick / hurting?",
+        "category": "Body/health (身体/健康)"
+    },
+    {
+        "order": 62,
+        "sentence": "00000029",
+        "spoken": "si yask ujin / den?",
+        "written": "si  ya gese ujen / den?",
+        
+        "mandarin": "你多高/重？",
+        "english": "How tall are you? // What is your weight?",
+        "category": "Body/health (身体/健康)"
+    },
+    {
+        "order": 63,
+        "sentence": "00000030",
+        "spoken": "bi nyuNkulVei.",
+        "written": "bi nimekulehebi.",
+        
+        "mandarin": "我生病了.",
+        "english": "I am sick.",
+        "category": "Body/health (身体/健康)"
+    },
+    {
+        "order": 64,
+        "sentence": "00000031",
+        "spoken": "bi qor bahhei.",
+        "written": "bi koro bahahabi.",
+        
+        "mandarin": "我受伤了.",
+        "english": "I got hurt.",
+        "category": "Body/health (身体/健康)"
+    },
+    {
+        "order": 65,
+        "sentence": "00000032",
+        "spoken": "min [ujw] niimmai",
+        "written": "mini [uju] nimemahabi.",
+        
+        "mandarin": "我的[头] 疼/痛.",
+        "english": "My [head] hurts. ",
+        "category": "Body/health (身体/健康)"
+    },
+    {
+        "order": 66,
+        "sentence": "00000043",
+        "spoken": "minb em honolr.",
+        "written": "mimbe ume honoloro.",
+        
+        "mandarin": "不要打扰我.",
+        "english": "Don't bother me.",
+        "category": "Problems (问题)"
+    },
+    {
+        "order": 67,
+        "sentence": "00000044",
+        "spoken": "minb em halder.",
+        "written": "mimbe ume haldara.",
+        
+        "mandarin": "不要碰我.",
+        "english": "Don't touch me.",
+        "category": "Problems (问题)"
+    },
+    {
+        "order": 68,
+        "sentence": "00000045",
+        "spoken": "bi daifurand genem. ",
+        "written": "bi daifuran de genembi.",
+        
+        "mandarin": "我要去医院.",
+        "english": "I need to go to the hospital.",
+        "category": "Problems (问题)"
+    },
+    {
+        "order": 69,
+        "sentence": "00000046",
+        "spoken": "bi gyarisiv hulamuRo.",
+        "written": "bi giyarisi be hvlame oho.",
+        
+        "mandarin": "我要叫警察了.",
+        "english": "I'll call the police.",
+        "category": "Problems (问题)"
+    },
+    {
+        "order": 70,
+        "sentence": "00000047",
+        "spoken": "bi sinb aizilm gaevem.",
+        "written": "bi simbe aisilabume gaibumbi.",
+        
+        "mandarin": "我需要你的帮助.",
+        "english": "I need your help. ",
+        "category": "Problems (问题)"
+    },
+    {
+        "order": 71,
+        "sentence": "00000048",
+        "spoken": "erni hahy bait.",
+        "written": "ere inu hahi baita.",
+        
+        "mandarin": "这是紧急情况.",
+        "english": "This is an emergency situation.",
+        "category": "Problems (问题)"
+    },
+    {
+        "order": 72,
+        "sentence": "00000049",
+        "spoken": "bi joRun famevVei.",
+        "written": "bi jugvn fambuhabi.",
+        
+        "mandarin": "我迷路了.",
+        "english": "I am lost. ",
+        "category": "Problems (问题)"
+    },
+    {
+        "order": 73,
+        "sentence": "00000050",
+        "spoken": "min jiRa folhw vyelvVei.",
+        "written": "mini jiha fulhv waliyabuhabi.",
+        
+        "mandarin": "我的钱包丢了.",
+        "english": "I lost my wallet.",
+        "category": "Problems (问题)"
+    },
+    {
+        "order": 74,
+        "sentence": "00000051",
+        "spoken": "bi daif baiteN.",
+        "written": "bi daifu baitangga.",
+        
+        "mandarin": "我需要医生.",
+        "english": "I need a doctor.",
+        "category": "Problems (问题)"
+    },
+    {
+        "order": 75,
+        "sentence": "00000052",
+        "spoken": "bi emdan Galtun tandem omna?",
+        "written": "bi emdan galatun tantame ombi nio?",
+        
+        "mandarin": "我可以打手机吗？",
+        "english": "Can I make a phone call?",
+        "category": "Problems (问题)"
+    },
+    {
+        "order": 76,
+        "sentence": "00000083",
+        "spoken": "erni Gwa fyan niN bina?",
+        "written": "ere inu gvwa fiyan bi nio?",
+        
+        "mandarin": "这个有没有其他颜色？",
+        "english": "Do you have this in other colors?",
+        "category": "Shopping (买东西)"
+    },
+    {
+        "order": 77,
+        "sentence": "00000084",
+        "spoken": "si ai fyan niN gaeky zemaye? // bi felgaen fyan niN gaem.",
+        "written": "si ai fiyan ningge gaiki semahabi? // bi fulgiyan ningge gaimbi.",
+        
+        "mandarin": "你要什么颜色的? // 我要红色的.",
+        "english": "What color do you want? I want red.",
+        "category": "Shopping (买东西)"
+    },
+    {
+        "order": 78,
+        "sentence": "00000085",
+        "spoken": "min utur kemen bina?",
+        "written": "mini eture kemun bi nio?",
+        
+        "mandarin": "有没有我的尺码？",
+        "english": "Do you have my size?",
+        "category": "Shopping (买东西)"
+    },
+    {
+        "order": 79,
+        "sentence": "00000086",
+        "spoken": "er ni yask jiRa?",
+        "written": "ere inu ya gese jiha?",
+        
+        "mandarin": "这个多少钱？",
+        "english": "How much is this?",
+        "category": "Shopping (买东西)"
+    },
+    {
+        "order": 80,
+        "sentence": "00000087",
+        "spoken": "maji jad bwo.",
+        "written": "majige ja de bu.",
+        
+        "mandarin": "请便宜一点 (给便宜一点).",
+        "english": "Can you make this cheaper?",
+        "category": "Shopping (买东西)"
+    },
+    {
+        "order": 81,
+        "sentence": "00000088",
+        "spoken": "davel hvdambu oRuye.",
+        "written": "dabali hvda amba ohobi.",
+        
+        "mandarin": "太贵了.",
+        "english": "This is too expensive.",
+        "category": "Shopping (买东西)"
+    },
+    {
+        "order": 82,
+        "sentence": "00000089",
+        "spoken": "[taN] tized omna?",
+        "written": "[tanggv] tis de ombi nio?",
+        
+        "mandarin": "[100元]可以吗？",
+        "english": "Is [100] dollars okay?",
+        "category": "Shopping (买东西)"
+    },
+    {
+        "order": 83,
+        "sentence": "00000090",
+        "spoken": "min jiRa isiqw.",
+        "written": "mini jiha isirakv.",
+        
+        "mandarin": "我带的钱不够.",
+        "english": "I didn't bring enough money. ",
+        "category": "Shopping (买东西)"
+    },
+    {
+        "order": 84,
+        "sentence": "00000091",
+        "spoken": "bi gaeqw.",
+        "written": "bi gairakv.",
+        
+        "mandarin": "我不要.",
+        "english": "I don't want it.",
+        "category": "Shopping (买东西)"
+    },
+    {
+        "order": 85,
+        "sentence": "00000092",
+        "spoken": "bi cyaGw.",
+        "written": "bi cihakv.",
+        
+        "mandarin": "我不喜欢.",
+        "english": "I am not interested.",
+        "category": "Shopping (买东西)"
+    },
+    {
+        "order": 86,
+        "sentence": "00000093",
+        "spoken": "bi erev gaem.",
+        "written": "bi ere be gaimbi.",
+        
+        "mandarin": "我要买这个.",
+        "english": "I want to buy this. ",
+        "category": "Shopping (买东西)"
+    },
+    {
+        "order": 87,
+        "sentence": "00000094",
+        "spoken": "si folhw gaemna? gaemye / gaeqw. ",
+        "written": "si fulhv gaimbi nio? gambi / gairakv. ",
+        
+        "mandarin": "你要不要袋子？ 要 / 不要",
+        "english": "Do you want a bag? // Yes / no",
+        "category": "Shopping (买东西)"
+    },
+    {
+        "order": 88,
+        "sentence": "00000095",
+        "spoken": "bi eref / terev gaem.",
+        "written": "bi ere be / tere be gaimbi.",
+        
+        "mandarin": "我要这个 / 那个.",
+        "english": "I want this / that. ",
+        "category": "Shopping (买东西)"
+    },
+    {
+        "order": 89,
+        "sentence": "00000096",
+        "spoken": "bi em coman boloqw / saRurun muku gaem.",
+        "written": "bi emu coman bulukan / xahvrun muke gaimbi. ",
+        
+        "mandarin": "我要一杯温水 / 冷水。",
+        "english": "I want hot / cold water.",
+        "category": "Dining (餐厅)"
+    },
+    {
+        "order": 90,
+        "sentence": "00000097",
+        "spoken": "mind emdan syogu bojE tavev.",
+        "written": "minde emdan sogi boje tawabubu.",
+        
+        "mandarin": "请给我看看菜单.",
+        "english": "Please give me a menu.",
+        "category": "Dining (餐厅)"
+    },
+    {
+        "order": 91,
+        "sentence": "00000098",
+        "spoken": "yiqan herVen syogu bojE bina?",
+        "written": "nikan hergen sogi boje bi nio?",
+        
+        "mandarin": "你有没有中文菜单？",
+        "english": "Do you have a menu in Mandarin?",
+        "category": "Dining (餐厅)"
+    },
+    {
+        "order": 92,
+        "sentence": "00000099",
+        "spoken": "mind [er] ye [erev] bu.",
+        "written": "minde [ere] ye [ere be] bu.",
+        
+        "mandarin": "请给我[这个]和[这个].",
+        "english": "Please give me [this] and [this].",
+        "category": "Dining (餐厅)"
+    },
+    {
+        "order": 93,
+        "sentence": "00000100",
+        "spoken": "mind gel [em mor] bu.",
+        "written": "minde geli [emu moro] bu.",
+        
+        "mandarin": "请再给我[一个碗].",
+        "english": "Please give me another [bowl].",
+        "category": "Dining (餐厅)"
+    },
+    {
+        "order": 94,
+        "sentence": "00000101",
+        "spoken": "ai erind limye / yaqsemye?",
+        "written": "ai erin de neimbi / yaksimbi.",
+        
+        "mandarin": "几点开/关门？",
+        "english": "What time do you open / close?",
+        "category": "Dining (餐厅)"
+    },
+    {
+        "order": 95,
+        "sentence": "00000102",
+        "spoken": "tulsy cicir ba aivid bye?",
+        "written": "tulesi tucire ba aibide bi?",
+        
+        "mandarin": "厕所在哪里？",
+        "english": "Where is the restroom?",
+        "category": "Dining (餐厅)"
+    },
+    {
+        "order": 96,
+        "sentence": "00000103",
+        "spoken": "udw nanE / nyalmE? // yilan nan / niyalm.",
+        "written": "udu nane / niyalma?  // ilan nane / niyalma?",
+        
+        "mandarin": "几位? // 三位.",
+        "english": "How many people? Three.",
+        "category": "Dining (餐厅)"
+    },
+    {
+        "order": 97,
+        "sentence": "00000104",
+        "spoken": "bi urunVei / qaNhhei.",
+        "written": "bi urunehebi / kangkahabi.",
+        
+        "mandarin": "我饿了/渴了.",
+        "english": "I am hungry / thirsty.",
+        "category": "Dining (餐厅)"
+    },
+    {
+        "order": 98,
+        "sentence": "00000105",
+        "spoken": "icE any urVun okiny.",
+        "written": "ice aniya urgun okini.",
+        
+        "mandarin": "新年快乐.",
+        "english": "Happy New Year!",
+        "category": "Other (其他)"
+    },
+    {
+        "order": 99,
+        "sentence": "00000106",
+        "spoken": "si emVun na?",
+        "written": "si emhun nio?",
+        
+        "mandarin": "你单身吗？",
+        "english": "Are you single?",
+        "category": "Other (其他)"
+    },
+    {
+        "order": 100,
+        "sentence": "00000107",
+        "spoken": "ter hen / veiniN horoN banXxei.",
+        "written": "tere hon / veining horonggo banjihabi.",
+        
+        "mandarin": "他好帅.",
+        "english": "He is handsome.",
+        "category": "Other (其他)"
+    },
+    {
+        "order": 101,
+        "sentence": "00000108",
+        "spoken": "ter hen / kwaryaN banXxei. // ter veiniN saiqan banXxei.",
+        "written": "tere hon / kuwariyangga banjihabi. // tere unenggi saikan banjihabi.",
+        
+        "mandarin": "她好漂亮.",
+        "english": "She is pretty.",
+        "category": "Other (其他)"
+    },
+    {
+        "order": 102,
+        "sentence": "00000109",
+        "spoken": "xuu hancy [pus] yavad bye?",
+        "written": "xuwe hanci [puse] ya bade bi?",
+        
+        "mandarin": "最近的[商店]在哪里？",
+        "english": "Where is the nearest [store]?",
+        "category": "Other (其他)"
+    },
+    {
+        "order": 103,
+        "sentence": "00000110",
+        "spoken": "hansy bad [epus] bi.",
+        "written": "hanci bade [puse] bi.",
+        
+        "mandarin": "附近有[一个商店].",
+        "english": "There is [a store] nearby.",
+        "category": "Other (其他)"
+    },
+    {
+        "order": 104,
+        "sentence": "00000111",
+        "spoken": "[uciv] emdan lii.",
+        "written": "[uce be] emdan nei.",
+        
+        "mandarin": "请把[门]打开.",
+        "english": "Please open [the door]. ",
+        "category": "Other (其他)"
+    },
+    {
+        "order": 105,
+        "sentence": "00000112",
+        "spoken": "mind emdan aizil.",
+        "written": "minde emdan aisila.",
+        
+        "mandarin": "请帮帮我.",
+        "english": "Please help me. ",
+        "category": "Other (其他)"
+    },
+    {
+        "order": 106,
+        "sentence": "00000040",
+        "spoken": "sond bo bina?",
+        "written": "suwende boo bi nio?",
+        
+        "mandarin": "你们有房间吗？",
+        "english": "How many rooms do you have?",
+        "category": "Other (其他)"
+    },
+    {
+        "order": 107,
+        "sentence": "00000041",
+        "spoken": "bi [ju] yemjy yindkye zem.",
+        "written": "bi [juwe] yamji indeki sembi.",
+        
+        "mandarin": "我打算住[两]晚.",
+        "english": "I plan to stay [two] nights.",
+        "category": "Other (其他)"
+    },
+    {
+        "order": 108,
+        "sentence": "00000042",
+        "spoken": "bi [yilan] nyalm dudur bo gaem.",
+        "written": "bi [ilan] nyalma dedure boo gaimbi.",
+        
+        "mandarin": "我要[三]人间.",
+        "english": "I want a [three] person room.",
+        "category": "Other (其他)"
+    }
+],
+                columns: [
+                    {data: "order", orderable: false},
+                    {data: "sentence", orderable: false},
+                    {data: "spoken"},
+                    {data: "written"},
+                    // {data: "scriptText"},
+                    {data: "mandarin"},
+                    {data: "english"},
+                    {data: "category"},
+                ],
+
+                "columnDefs": [ {
+                    "targets": 1,
+                    "data": "sentence",
+                    "render": function (data, type, row, meta) {
+                        return ("<img src='data/Image/play.png' loading = 'lazy' onload = 'player(" + '"' + data + '"' + ")' class = 'pic' id='" + data + "'value='" + data + "'>")
+                    }}, {
+                        "targets": 0,
+                        "visible": false,
+                        "searchable": true
+                    }  
+                ],
+
+                "order": [[0, "asc"]],
+                "paging": true,
+                "scrollY": "700px",
+                "lengthChange": false,
+                "deferRender": true,
+                "pageLength": 75,
+                "language": {
+                    "search": "Search/搜索:"
+                }
+
+            }
+            );
+        } );
+
+        function onVisible(num, callback) {
+            element = document.getElementById(num)
+            new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                if(entry.intersectionRatio > 0) {
+                    callback(num);
+                    observer.disconnect();
+                }
+                });
+            }).observe(element);
+            }
+
+        array = document.getElementsByClassName("pic")
+       
+
+
+
+        // function adder(entry) {
+        //     // document.getElementById(entry).innerHTML = "<audio id =" + "a" + entry + " src = 'data/Audio/" + entry + ".wav'></audio>"
+        //     // document.getElementById(entry).addEventListener("click", function(){
+        //     //     document.getElementById("a_" + entry).play()
+        //     //     document.getElementById(entry).style.borderRadius = "50%"
+        //     //     document.getElementById(entry).style.border = "2px solid blue"
+        //     //     setTimeout(unlight, 2500)
+        //     //     function unlight() {
+        //     //         document.getElementById(entry).style.borderRadius = "0"
+        //     //         document.getElementById(entry).style.border = "0px"
+        //     // }
+        //     // })
+        //     onVisible(entry, player)
+        // }
+
+        function player(entry) {
+            console.log(entry)
+            document.getElementById(entry).innerHTML = "<audio id =" + "a" + entry + " src = 'data/Audio/Phrasebook/" + entry + ".wav'></audio>"
+            document.getElementById(entry).addEventListener("click", function playt(){
+                document.getElementById("a" + entry).play()
+                document.getElementById(entry).style.borderRadius = "50%"
+                document.getElementById(entry).style.border = "2px solid blue"
+                setTimeout(unlight, 2500)
+                function unlight() {
+                    document.getElementById(entry).style.borderRadius = "0"
+                    document.getElementById(entry).style.border = "0px"
+                }
+                document.removeEventListener("click", playt)
+            })
+            }
+
+    </script>
+
+<div style="padding-left: 40px; padding-right: 40px">
+    <table id="table_id" class="display">
+        <thead>
+            <tr>
+                <th>Order</th>
+                <th>Audio</th>
+                <th>Spoken</th>
+                <th>Written</th>
+                <!-- <th>Script (Text)</th> -->
+                <th>Mandarin</th>
+                <th>English</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<br>
+<div style="padding-left: 40px">
+    <h2>Jacob Aaron Kodner (柯雅各) | Developer</h2>
+    <h3>Undergraduate | Department of Language Science</h3>
+    <h3>University of California, Irvine</h3><br>
+</div>
+<div style="padding-left: 40px">
+<h2>Meng Rong Lu (孟榮路) | Linguistic Correspondent</h2>
+<h3>Sebsihiyan Amban, Manchu-Sibe Culture Center</h3>
+<h3>Shenyang, China</h3><br>
+</div>
+<div style="padding-left: 40px">
+<h2 style> So Wai Lun, Tony (蘇偉倫) | Editor</h2>
+<h3>Hong Kong, China</h3>
+</div>
+<br>
+<h4 style="padding-left:40px; font-size: 15px; font-weight: 200">Contact: minibuleku@gmail.com</h3><br>
+
+</body>
+
+</html>
