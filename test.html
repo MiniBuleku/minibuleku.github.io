@@ -80686,7 +80686,7 @@ padding-bottom: 10px;
                     {data: "null", orderable: true, "render": function (data, type, row, meta) {
                                         if (row.enum[-1] != "*") {
                                         //                             return "<img src='data/Image/expand.png' onclick='show('" + row.s1num + "', '" + row.s1spoken + "', '" + row.s1written + "')'></img>"
-                                        return (`<img src='data/Image/expand.png' onclick = 'show("${row.espoken}", "${row.eipa}", "${row.enum}")'>`)
+                                        return (`<img src='data/Image/play.png' onclick = 'show("${row.espoken}", "${row.eipa}", "${row.enum}")'>`)
                                     } else {
                                         return ""
                                     }}},
@@ -80711,13 +80711,7 @@ padding-bottom: 10px;
                                     }}}
                 ],
 
-                "columnDefs": [ {
-                    "targets": 0,
-                    "data": "entry",
-                    "render": function (data, type, row, meta) {
-                        return "Hi"
-                        // return ("<img src='data/Image/play.png' loading = 'lazy' onload = 'player(" + data + ")' class = 'pic' id='" + data + "'value='" + data + "'>")
-                    }}, {
+                "columnDefs": [{
                     "targets": 3,
                     "data": "scriptText",
                     "render": function (data, type, row, meta) {
@@ -80766,6 +80760,7 @@ padding-bottom: 10px;
 
         function show(espoken, eipa, enumb, ewritten="", s1num="", s1spoken="", s1written="", s1man="", s1eng="", s2num="", s2spoken="", s2written="", s2man="", s2eng="") {
             // next steps (1) delete pop-up if already present, and (2) create table with function inputs
+            
             if (document.getElementById("extra")) {
                 document.getElementById('extra').remove()
             }
