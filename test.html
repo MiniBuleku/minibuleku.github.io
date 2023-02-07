@@ -53597,26 +53597,26 @@ padding-bottom: 10px;
         "s2man": "",
         "s2eng": ""
     },
-    {
-        "enum": 3084,
-        "espoken": "afh",
-        "eipa": "afχ",
-        "ewritten": "afaha",
-        "escript": "ᠠᡶᠠᡥᠠ",
-        "eman": "页, 张, 字条, 单子",
-        "eeng": "page, note, list",
-        "econj": "",
-        "s1num": "",
-        "s1spoken": "",
-        "s1written": "",
-        "s1man": "",
-        "s1eng": "",
-        "s2num": "",
-        "s2spoken": "",
-        "s2written": "",
-        "s2man": "",
-        "s2eng": ""
-    },
+    // {
+    //     "enum": 3084,
+    //     "espoken": "afh",
+    //     "eipa": "afχ",
+    //     "ewritten": "afaha",
+    //     "escript": "ᠠᡶᠠᡥᠠ",
+    //     "eman": "页, 张, 字条, 单子",
+    //     "eeng": "page, note, list",
+    //     "econj": "",
+    //     "s1num": "",
+    //     "s1spoken": "",
+    //     "s1written": "",
+    //     "s1man": "",
+    //     "s1eng": "",
+    //     "s2num": "",
+    //     "s2spoken": "",
+    //     "s2written": "",
+    //     "s2man": "",
+    //     "s2eng": ""
+    // },
     {
         "enum": 3085,
         "espoken": "afhari",
@@ -80685,9 +80685,15 @@ padding-bottom: 10px;
                     {data: "ewritten"},
                     {data: "escript", orderable: false, "render": function (data, type, row, meta) {
                         if (!(row.ewritten == "")) {
-                            return `<div style="" class="img_text" onclick = 'show_pic("${row.espoken}", "${row.enum}", "${row.ewritten}")'><p style='font-size:20px; writing-mode: vertical-rl; text-orientation: sideways'>${data}</p></div>`
+                            return `<p style='white-space: nowrap; writing-mode: vertical-rl; text-orientation: sideways; font-size:20px'>${data}</p>`
                         // return "<input type='image' margin-left='auto' margin-right='auto' src='data/Image/0.png' onmouseover='this.src=\"data/Image/" + row.enum + ".png\"' id = " + row.enum + " onmouseleave='this.src=\"data/Image/0.png\"'>"
                     } else {
+                        return ""
+                    }}}, 
+                    {data: "null", orderable: false, "render": function (data, type, row, meta) {
+                        if (row.written != "") {
+                            return `<div style="cursor: pointer" onclick = 'show_pic("${row.espoken}", "${row.enum}", "${row.ewritten}")'><p>「Open/<br>点击」</p></div>`
+                    } else{
                         return ""
                     }}},
                     {data: "eman", orderable: false},
@@ -80696,7 +80702,7 @@ padding-bottom: 10px;
                     {data: "null", orderable: true, "render": function (data, type, row, meta) {
                                         if (row.s1num != "") {
                                         //                             return "<img src='data/Image/expand.png' onclick='show('" + row.s1num + "', '" + row.s1spoken + "', '" + row.s1written + "')'></img>"
-                                        return (`<div class="img_text" onclick = 'show("${row.espoken}", "", "", "${row.ewritten}", "${row.s1num}", "${row.s1spoken}", "${row.s1written}", "${row.s1man}", "${row.s1eng}", "${row.s2num}", "${row.s2spoken}", "${row.s2written}", "${row.s2man}", "${row.s2eng}")'><p>☐</p></h1>`)
+                                        return (`<div style="cursor: pointer" onclick = 'show("${row.espoken}", "", "", "${row.ewritten}", "${row.s1num}", "${row.s1spoken}", "${row.s1written}", "${row.s1man}", "${row.s1eng}", "${row.s2num}", "${row.s2spoken}", "${row.s2written}", "${row.s2man}", "${row.s2eng}")'><p>「Open/<br>点击」</p></h1>`)
                                     } else {
                                         return ""
                                     }}}
@@ -80708,7 +80714,7 @@ padding-bottom: 10px;
                     "render": function (data, type, row, meta) {
                         return ("<p style='font-size:20px; writing-mode: vertical-rl; text-orientation: sideways'>" + data + "</p>")
                     }}, {
-                        "targets": 6,
+                        "targets": 7,
                         "visible": false,
                         "searchable": true}
                     // {
@@ -80888,7 +80894,8 @@ padding-bottom: 10px;
                 <th>Audio</th>
                 <th>Spoken</th>
                 <th>Written</th>
-                <th>Script</th>
+                <th>Script (Text)</th>
+                <th>Script (Image)</th>
                 <th>Mandarin</th>
                 <th>English</th>
                 <th>Conjugation</th>
