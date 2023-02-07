@@ -79,11 +79,11 @@ padding-bottom: 10px;
  transition: 0.3s ease;
 }
 
-/* .img_text:hover {
+.img_text:hover {
  background-color: lightgrey;
  border-radius: 5px;
  transition: 0.3s ease;
-} */
+}
 
 .menu li {
  padding: 5px 14px;
@@ -80678,7 +80678,7 @@ padding-bottom: 10px;
 ],
     columns: [
                     {data: "null", orderable: true, "render": function (data, type, row, meta) {
-                            return (`<div class="img_text" onclick = 'show("${row.espoken}", "${row.eipa}", "${row.enum}")'>&nbsp▷&nbsp</p></div>`)}},
+                            return (`<div class="img_text" onclick = 'show("${row.espoken}", "${row.eipa}", "${row.enum}")'>&nbsp▷&nbsp</div>`)}},
                     {data: "espoken"},
                     {data: "ewritten"},
                     {data: "escript", orderable: false, "render": function (data, type, row, meta) {
@@ -80830,10 +80830,9 @@ padding-bottom: 10px;
             // e.style.top = "25%"
             // e.style.left = "25%"
             // var command = "document.getElementById('extra').style.display= none'"
-            e.innerHTML = `<img id='mini' style="display: inline" src='data/Image/minimize.png' onclick = "document.getElementById('extra').remove()"></img><h3 style="font-size: 18px; padding-left: 12px; display: inline">${espoken}</h3>`
+            e.innerHTML = `<img id='mini' style="display: inline" src='data/Image/minimize.png' onclick = "document.getElementById('extra').remove()"></img><h3 style="font-size: 18px; padding-left: 12px; display: inline">${ewritten}</h3>`
             const mini_table = document.createElement("table")
             new_html = `<ul style='margin-top: -4px; text-align: left; font-size: 16px; list-style-type:disc; display:inline-block'><br>
-            <li><u>${ewritten}</u><br><br></li>
             <img style="border: 1px solid black" src='${path}'></img></ul>`
             mini_table.innerHTML = new_html
             e.append(mini_table)
