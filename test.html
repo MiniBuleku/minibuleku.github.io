@@ -53590,7 +53590,7 @@ padding-bottom: 10px;
         "s1spoken": "adulasy adulr ucun uculmai.",
         "s1written": "adulasi adulara ucun uculemahabi.",
         "s1man": "牧人在唱牧歌.",
-        "s1eng": "The shepherds are singing a sheperd's song. ",
+        "s1eng": "The shepherds are singing a sheperd‘s song.",
         "s2num": "",
         "s2spoken": "",
         "s2written": "",
@@ -80777,8 +80777,8 @@ padding-bottom: 10px;
             new_html = `<ul style='margin-top: -4px; text-align: left; font-size: 16px; list-style-type:disc; display:inline-block'>`
             // (!(numb[numb.length - 1] == "*"))
             if (eipa) {    
-                if (!(enumb[enumb.length - 1] == "*")) {
-                    new_html += `<li>• <u>Audio (Spoken)</u>: ${espoken}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' loading = 'lazy' onload = 'player("e_s_${enumb}")' class = 'pic' id='e_s_${enumb}' value='${enumb}'><br><br>
+                if (!(enumb[enumb.length - 1] == "*")) {  // ***
+                    new_html += `<li>• <u>Audio (Spoken)</u>: ${espoken}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' preload='auto' onclick="playt('e_s_${enumb}')" class = 'pic' id='i_e_s_${enumb}'><audio src = 'data/Audio/e_s_${enumb}.wav' id ="a_e_s_${enumb}"></audio><br><br>
                         <li>• <u>IPA (国际音标)</u>: ${eipa}</li><br>`
                 }
 
@@ -80788,20 +80788,20 @@ padding-bottom: 10px;
             }
             if (s1num) {
                 if (s1num != "") {
-                    e_w_audio_id = `e_w_${s1num}`
-                    s_s_audio_id = `s_s_${s1num}`
-                    s_w_audio_id = `s_w_${s1num}`
-                    new_html += `<li>• <u>Audio (Written)</u>: ${ewritten}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' loading = 'lazy' onload = 'player("${e_w_audio_id}", 1)' class = 'pic' id='${e_w_audio_id}'value='${e_w_audio_id}'><br><br>
+                    new_html += `<li>• <u>Audio (Written)</u>: ${ewritten}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' preload='auto' onclick="playt('e_w_${s1num}')" class = 'pic' id='i_e_w_${s1num}'><audio src = 'data/Audio/dict_extra/e_w_${s1num}.wav' id ="a_e_w_${s1num}"></audio><br><br>
                     <li><b>Example Sentence (例句)</b></li><br>
-                    <li>• <u>Spoken</u>: ${s1spoken}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' loading = 'lazy' onload = 'player("${s_s_audio_id}", 1)' class = 'pic' id='${s_s_audio_id}'value='${s_s_audio_id}'><br>
-                    <li>• <u>Written</u>: ${s1written}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' loading = 'lazy' onload = 'player("${s_w_audio_id}", 1)' class = 'pic' id='${s_w_audio_id}'value='${s_w_audio_id}'><br><br>
+                    <li>• <u>Spoken</u>: ${s1spoken}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' preload='auto' onclick="playt('s_s_${s1num}')" class = 'pic' id='i_s_s_${s1num}'><audio src = 'data/Audio/dict_extra/s_s_${s1num}.wav' id ="a_s_s_${s1num}"></audio><br>
+                    <li>• <u>Written</u>: ${s1written}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' preload='auto' onclick="playt('s_w_${s1num}')" class = 'pic' id='i_s_w_${s1num}'><audio src = 'data/Audio/dict_extra/s_w_${s1num}.wav' id ="a_s_w_${s1num}"></audio><br><br>
                     <li>• <u>Mandarin</u>: ${s1man}</li><br><br>
                     <li>• <u>English</u>: ${s1eng}</li><br><br>`
                 }
                 if (!(s2num == "")) {
+                    e_w_audio_id = `e_w_${s1num}`
+                    s_s_audio_id_2 = `s_s_${s2num}`
+                    s_w_audio_id_2 = `s_w_${s2num}`
                     new_html += `<br><li><b>Example Sentence (例句) 2</b></li><br>
-                    <li>• <u>Spoken</u>: ${s2spoken}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' loading = 'lazy' onload = 'player("${s_s_audio_id}", 1)' class = 'pic' id='${s_s_audio_id}'value='${s_s_audio_id}'><br>
-                    <li>• <u>Written</u>: ${s2written}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' loading = 'lazy' onload = 'player("${s_w_audio_id}", 1)' class = 'pic' id='${s_w_audio_id}'value='${s_w_audio_id}'><br><br>
+                    <li>• <u>Spoken</u>: ${s2spoken}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' preload='auto' onclick="playt('s_s_${s2num}')" class = 'pic' id='i_s_s_${s2num}'><audio src = 'data/Audio/dict_extra/s_s_${s2num}.wav' id ="a_s_s_${s2num}"></audio><br>
+                    <li>• <u>Written</u>: ${s2written}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' preload='auto' onclick="playt('s_w_${s2num}')" class = 'pic' id='i_s_w_${s2num}'><audio src = 'data/Audio/dict_extra/s_w_${s2num}.wav' id ="a_s_w_${s2num}"></audio><br><br>
                     <li>• <u>Mandarin</u>: ${s2man}</li><br><br>
                     <li>• <u>English</u>: ${s2eng}</li>`
                 }
@@ -80865,23 +80865,36 @@ padding-bottom: 10px;
         //     onVisible(entry, player)
         // }
 
-        function player(entry, token=0) {
-            path = "data/Audio/"
-            if (token) {
-                path = path + "dict_extra/"
-            }
-            document.getElementById(entry).innerHTML = "<audio id =" + "a" + entry + " src = '" + path + entry + ".wav'></audio>"
-            document.getElementById(entry).addEventListener("click", function playt(){
-                document.getElementById("a" + entry).play()
-                document.getElementById(entry).style.borderRadius = "50%"
-                document.getElementById(entry).style.border = "2px solid blue"
+        // function player(entry, token=0) {
+        //     path = "data/Audio/"
+        //     if (token) {
+        //         path = path + "dict_extra/"
+        //     }
+        //     document.getElementById(entry).innerHTML = "<audio id =" + "a" + entry + " src = '" + path + entry + ".wav'></audio>"
+        //     document.getElementById(entry).addEventListener("click", function playt(){
+        //         document.getElementById("a" + entry).play()
+        //         document.getElementById(entry).style.borderRadius = "50%"
+        //         document.getElementById(entry).style.border = "2px solid blue"
+        //         setTimeout(unlight, 2500)
+        //         function unlight() {
+        //             document.getElementById(entry).style.borderRadius = "0"
+        //             document.getElementById(entry).style.border = "0px"
+        //         }
+        //         document.removeEventListener("click", playt)
+        //     })
+        //     }
+
+        function playt(id_name) {
+            console.log("hi!")
+            document.getElementById("a_" + id_name).play()
+                document.getElementById("i_" + id_name).style.borderRadius = "50%"
+                document.getElementById("i_" + id_name).style.border = "2px solid blue"
                 setTimeout(unlight, 2500)
                 function unlight() {
-                    document.getElementById(entry).style.borderRadius = "0"
-                    document.getElementById(entry).style.border = "0px"
+                    document.getElementById("i_" + id_name).style.borderRadius = "0"
+                    document.getElementById("i_" + id_name).style.border = "0px"
                 }
                 document.removeEventListener("click", playt)
-            })
             }
 
     </script>
