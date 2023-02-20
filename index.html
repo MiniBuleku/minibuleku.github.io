@@ -80778,7 +80778,7 @@ padding-bottom: 10px;
             // (!(numb[numb.length - 1] == "*"))
             if (eipa) {    
                 if (!(enumb[enumb.length - 1] == "*")) {  // ***
-                    new_html += `<li>• <u>Audio (Spoken)</u>: ${espoken}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' preload='auto' onclick="playt('e_s_${enumb}')" class = 'pic' id='i_e_s_${enumb}'><audio src = 'data/Audio/e_s_${enumb}.wav' id ="a_e_s_${enumb}"></audio><br><br>
+                    new_html += `<li>• <u>Audio (Spoken)</u>: ${espoken}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' preload='auto' onclick="playt('e_s_${enumb}')" class = 'pic' id='i_e_s_${enumb}'><audio src = 'data/Audio/e_s_${enumb}.mp3' id ="a_e_s_${enumb}"></audio><br><br>
                         <li>• <u>IPA (国际音标)</u>: ${eipa}</li><br>`
                 }
 
@@ -80788,10 +80788,10 @@ padding-bottom: 10px;
             }
             if (s1num) {
                 if (s1num != "") {
-                    new_html += `<li>• <u>Audio (Written)</u>: ${ewritten}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' preload='auto' onclick="playt('e_w_${s1num}')" class = 'pic' id='i_e_w_${s1num}'><audio src = 'data/Audio/dict_extra/e_w_${s1num}.wav' id ="a_e_w_${s1num}"></audio><br><br>
+                    new_html += `<li>• <u>Audio (Written)</u>: ${ewritten}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' preload='auto' onclick="playt('e_w_${s1num}')" class = 'pic' id='i_e_w_${s1num}'><audio src = 'data/Audio/dict_extra/e_w_${s1num}.mp3' id ="a_e_w_${s1num}"></audio><br><br>
                     <li><b>Example Sentence (例句)</b></li><br>
-                    <li>• <u>Spoken</u>: ${s1spoken}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' preload='auto' onclick="playt('s_s_${s1num}')" class = 'pic' id='i_s_s_${s1num}'><audio src = 'data/Audio/dict_extra/s_s_${s1num}.wav' id ="a_s_s_${s1num}"></audio><br>
-                    <li>• <u>Written</u>: ${s1written}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' preload='auto' onclick="playt('s_w_${s1num}')" class = 'pic' id='i_s_w_${s1num}'><audio src = 'data/Audio/dict_extra/s_w_${s1num}.wav' id ="a_s_w_${s1num}"></audio><br><br>
+                    <li>• <u>Spoken</u>: ${s1spoken}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' preload='auto' onclick="playt('s_s_${s1num}')" class = 'pic' id='i_s_s_${s1num}'><audio src = 'data/Audio/dict_extra/s_s_${s1num}.mp3' id ="a_s_s_${s1num}"></audio><br>
+                    <li>• <u>Written</u>: ${s1written}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' preload='auto' onclick="playt('s_w_${s1num}')" class = 'pic' id='i_s_w_${s1num}'><audio src = 'data/Audio/dict_extra/s_w_${s1num}.mp3' id ="a_s_w_${s1num}"></audio><br><br>
                     <li>• <u>Mandarin</u>: ${s1man}</li><br><br>
                     <li>• <u>English</u>: ${s1eng}</li><br><br>`
                 }
@@ -80800,8 +80800,8 @@ padding-bottom: 10px;
                     s_s_audio_id_2 = `s_s_${s2num}`
                     s_w_audio_id_2 = `s_w_${s2num}`
                     new_html += `<br><li><b>Example Sentence (例句) 2</b></li><br>
-                    <li>• <u>Spoken</u>: ${s2spoken}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' preload='auto' onclick="playt('s_s_${s2num}')" class = 'pic' id='i_s_s_${s2num}'><audio src = 'data/Audio/dict_extra/s_s_${s2num}.wav' id ="a_s_s_${s2num}"></audio><br>
-                    <li>• <u>Written</u>: ${s2written}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' preload='auto' onclick="playt('s_w_${s2num}')" class = 'pic' id='i_s_w_${s2num}'><audio src = 'data/Audio/dict_extra/s_w_${s2num}.wav' id ="a_s_w_${s2num}"></audio><br><br>
+                    <li>• <u>Spoken</u>: ${s2spoken}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' preload='auto' onclick="playt('s_s_${s2num}')" class = 'pic' id='i_s_s_${s2num}'><audio src = 'data/Audio/dict_extra/s_s_${s2num}.mp3' id ="a_s_s_${s2num}"></audio><br>
+                    <li>• <u>Written</u>: ${s2written}</li>&nbsp<img style="position: relative; top:8px" src='data/Image/play.png' preload='auto' onclick="playt('s_w_${s2num}')" class = 'pic' id='i_s_w_${s2num}'><audio src = 'data/Audio/dict_extra/s_w_${s2num}.mp3' id ="a_s_w_${s2num}"></audio><br><br>
                     <li>• <u>Mandarin</u>: ${s2man}</li><br><br>
                     <li>• <u>English</u>: ${s2eng}</li>`
                 }
