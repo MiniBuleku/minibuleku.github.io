@@ -32,7 +32,7 @@ a {
  text-decoration: none;
 }
 
-li {
+li.nav-links {
  list-style: none;
  display: inline;
 }
@@ -104,6 +104,32 @@ padding-bottom: 10px;
   </nav>
 
 <div class="bio">
+  <div class="donate">
+    <h3 style="display: inline-block; font-weight: bolder"><u>Contribute to our documentation efforts</u>&nbsp</h3>
+    <div style="display: inline-block" id="donate-button-container">
+      <div id="donate-button"></div>
+      <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+      <script>
+      PayPal.Donation.Button({
+      env:'production',
+      hosted_button_id:'SMQ27MG88Z64S',
+      image: {
+      src:'https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif',
+      alt:'Donate with PayPal button',
+      title:'PayPal - The safer, easier way to pay online!',
+      }
+      }).render('#donate-button');
+      </script>
+      </div>
+
+    <h3 style="margin-top: -8px; font-weight: normal">All proceeds will go towards expanding this platform, specifically:
+    <ul>
+      <li>Adding more entries in spoken Sibe (with audio)</li>
+      <li>Producing more example sentences (with audio)</li>
+      <li>Recording more entries as pronounced in written Manchu</li>
+    </ul>
+    </div><br>
+
 <h2><u>About Mini Buleku</u></h2>
     <div class="tw-prose prose-lg max-w-screen-md false svelte-gs0mk0"><!-- HTML_TAG_START --><h3>Background &nbsp;</h3><p>Mini Buleku is a dictionary created for the language known as Sibe (IPA: [ɕivə], Sibe: <i>sibe gisun</i>), a Tungusic language spoken by the Sibe people of Northwestern Xinjiang, China. The main developer of the dictionary, Jacob Kodner, graduated with his BA in Linguistics from the University of California, Irvine in the United States. The editor touched base with Meng Rong Lu (孟荣路) from Chabchal County via WeChat in April 2021. Meng Rong Lu, the primary linguistic correspondent for this project, is a native speaker of Sibe. He is also fluent in Mandarin Chinese—which was the language of communication between the collaborators.</p><p></p><p>In terms of the status of the Sibe language, it is an endangered language according to the UNESCO Atlas of the World's Languages in Danger. A recent estimate puts the number of Sibe speakers in Xinjiang to be around 20,000 individuals (Zikmundová 2013), though those proficient in the language is estimated to be lower due to an ongoing linguistic shift to Mandarin Chinese (Meng Rong Lu, personal communication). Due to the current status of Sibe, this dictionary was created with three objectives in mind for different audiences, which are outlined in (1) below:</p><p></p><p>(1) For native speakers: to learn the written language<br>(2) For non-native speakers: to learn the spoken and written language<br>(3) For the academic community: to provide linguistic data for research purposes&nbsp;&nbsp;</p><p>The specific structure of the dictionary’s entries—which are discussed in detail in the Methodology section—was created in order to address these objectives. For instance, the traditional Manchu script version of lexemes are provided to meet objective (1), and audio recordings and translations of lexemes are included to meet objective (2).&nbsp;</p><p></p><h3>Methodology</h3><p>The present version of the dictionary was worked on from June to December 2021, and the majority of the time spent on the project was dedicated to collecting and processing entries. Each entry is coded with a number based on the order in which the lexeme (spoken version) appears in the alphabet, and the data points collected and processed for each entry are listed below in (4)—with a sample entry outlined in (5):</p><figure class="table"><table><tbody><tr><td>(4) Entry <i># &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</i><br>a. Spoken (romanized) version<br>b. Audio recording of spoken version<br>c. IPA transcription of spoken version<br>d. Written (romanized) version<br>e. Written version in Manchu script<br>f. Mandarin translation<br>g. English translation</td><td>(5) Entry #1188 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>a. honcirem<br>b. 1188.wav<br>c. χɔntɕirɯm<br>d. honcarambi&nbsp;<br>e. ᡥᠣᠨᠴᠠᡵᠠᠮᠪᡳ<br>f. 打呼噜<br>g. to snore</td></tr></tbody></table></figure><p></p><p>The data collection process started with Meng Rong Lu creating a list of lexemes, which was done by consulting the written Manchu terms in Kengo Yamamoto’s <i>A Classified Dictionary of Spoken Manchu </i>and translating them into spoken form. The terms in spoken form (eventually becoming (4a)) and the written forms (4d) were grouped together as individual lexemes on a spreadsheet, and each lexeme received an individual number code (i.e., the entry number). Each lexeme was also given a translation in Mandarin Chinese (4f). Meng Rong Lu then recorded himself pronouncing the spoken version of each lexeme and converted the recordings into .wav files named after the code (as shown in (4b)). A spreadsheet with the components collected for each coded lexeme (i.e., (4a), (4b), (4d), and (4f)) was sent to the main developer.</p><p></p><p>The spreadsheet received by the main editor from Meng Rong Lu was then uploaded to a cloud-based spreadsheet editor. The main editor proceeded to use an online tool he personally developed to convert the romanized forms of spoken lexemes into IPA. The aforementioned online tool, which can be found on this site under "Transcription System", takes a specific romanization system developed by Meng Rong Lu as input, and outputs IPA. In addition to IPA, the main editor included images of the written form of lexemes written in traditional Manchu script. There have been documented issues with rendering Manchu script on different browsers and software, so in order to remedy these issues, static images of the script were chosen over Unicode. Images were generated using the online tool <a href="http://www.anakv.com/eng/">Anakvu.</a></p><p></p><p>FThe main editor translated then all of the Mandarin translations from Meng Rong Lu into English. For accuracy purposes, both Chinese and English dictionaries were consulted, including <a href="http://www.manchu.work/home"><u>Manchu.Work</u></a> (满族空间) and Jerry Norman’s <i>A Comprehensive Manchu-English Dictionary</i>. Any words that were considered by the main editor and Mandarin speakers to be unclear and/or difficult to translate were run past Meng Rong Lu for assistance. Upon completion of the translation process, the entire spreadsheet was checked for errors multiple times by both the main editor and Meng Rong Lu. An additional cross-checking process was performed by So Wai Lun, Tony (蘇偉倫). Finally, all content was uploaded to this website, where we continue to add dictionary entries and multimedia content. </p><p><br></p><p><strong>Selected References</strong></p><p>Gorelova, L. M. (2002). <i>Manchu Grammar</i>. Brill.&nbsp;</p><p>Moseley, C. (2010). <i>Atlas of the World’s Languages in Danger</i>. 3rd ed. UNESCO Publishing.</p><p>Norman, J. (2013). <i>A Comprehensive Manchu-English Dictionary. </i>Harvard University Asia Center.</p><p>Yamamoto, K. (1969). <i>A Classified Dictionary Of Spoken Manchu: With Manchu, English And Japanese Indexes</i>. Institute for the Study of Languages and Cultures of Asia and Africa</p><p>Zikmundova. (2013). <i>Spoken Sibe: Morphology of the Inflected Parts of Speech</i> (Vol. 55060). Karolinum Press.</p><p>&nbsp;</p><!-- HTML_TAG_END --></div>
     <p><strong>Acknowledgement of Funding</strong></p>
